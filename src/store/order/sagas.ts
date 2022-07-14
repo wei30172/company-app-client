@@ -38,7 +38,13 @@ const fetchOrders = async () => {
 function* createOrderSaga(action: any) {
   try {
     const { email, name, address, total, cartItems } = action.payload;
-    const res: { order: IOrder } = yield call(createOrder, { email, name, address, total, cartItems });
+    const res: { order: IOrder } = yield call(createOrder, {
+      email,
+      name,
+      address,
+      total,
+      cartItems,
+    });
 
     yield put(
       createOrderSuccess({

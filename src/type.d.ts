@@ -14,8 +14,8 @@ interface ProductsState {
   products: IProduct[];
   isLoading: boolean;
   error: string;
-  size?: string,
-  sort?: string,
+  size?: string;
+  sort?: string;
   filteredItems?: IProduct[];
 }
 

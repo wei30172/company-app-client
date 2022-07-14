@@ -2,7 +2,7 @@ import { ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART } from "./actionTypes";
 import { CartActions } from "./types";
 
 const initialState: CartState = {
-  cartItems: []
+  cartItems: [],
 };
 
 const cartReducer = (state = initialState, action: CartActions) => {

@@ -1,12 +1,10 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
-import { Navbar } from "../../components";
+import { useRef } from "react";
+import { Navbar, Footer } from "../../components";
 
 import "./home.scss";
 
 const Home = () => {
-  const [navheight, setNavHeight] = useState(0);
-
   // create references
   const navbarRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -23,13 +21,10 @@ const Home = () => {
     missionRef,
   };
 
-  useEffect(() => {
-    setNavHeight(() => navbarRef.current?.clientHeight || 0);
-  }, []);
-  
   return (
-    <div className="home">
+    <div>
       <Navbar ref={navbarRef} mainRefs={mainRefs} />
+      <Footer />
     </div>
   );
 };

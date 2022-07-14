@@ -36,7 +36,6 @@ export const fetchProductsFailure = (
   payload,
 });
 
-
 export const filterProducts = (
   payload: FilterProductsPayload,
 ): FilterProducts => ({

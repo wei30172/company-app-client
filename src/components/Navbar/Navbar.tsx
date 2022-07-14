@@ -1,6 +1,6 @@
 import React, { useState, RefObject } from "react";
-import CloseIcon from '@material-ui/icons/Close';
-import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from "@material-ui/icons/Close";
+import MenuIcon from "@material-ui/icons/Menu";
 import logo from "../../assets/logo.svg";
 import { scrollToSection } from "../../utils/scrollToSection";
 import "./navbar.scss";
@@ -14,8 +14,8 @@ type Props = {
     teamRef: RefObject<HTMLDivElement>;
     jobsRef: RefObject<HTMLDivElement>;
     missionRef: RefObject<HTMLDivElement>;
-  }
-}
+  };
+};
 
 const Navbar = React.forwardRef<Ref, Props>((props, ref) => {
   const { aboutRef, valuesRef, teamRef, jobsRef, missionRef } = props.mainRefs;
@@ -73,7 +73,10 @@ const Navbar = React.forwardRef<Ref, Props>((props, ref) => {
       </div>
 
       {/* hamburger */}
-      <div onClick={() => setShowMobMenu(!showMobMenu)} className="navbar_hamburger">
+      <div
+        onClick={() => setShowMobMenu(!showMobMenu)}
+        className="navbar_hamburger"
+      >
         {!showMobMenu ? <MenuIcon /> : <CloseIcon />}
       </div>
 

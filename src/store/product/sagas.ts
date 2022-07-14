@@ -1,9 +1,6 @@
 import axios from "axios";
 import { all, call, put, takeLatest } from "redux-saga/effects";
-import {
-  fetchProductsSuccess,
-  fetchProductsFailure,
-} from "./actions";
+import { fetchProductsSuccess, fetchProductsFailure } from "./actions";
 import { FECTCH_PRODUCTS_REQUEST } from "./actionTypes";
 
 const HttpClient = axios.create({

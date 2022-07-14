@@ -29,13 +29,13 @@ export interface FetchProductsFailure {
 }
 
 export interface FilterProductsPayload {
-  size: string,
-  products: IProduct[]
+  size: string;
+  products: IProduct[];
 }
 
 export interface OrderProductsPayload {
-  sort: string,
-  products: IProduct[]
+  sort: string;
+  products: IProduct[];
 }
 
 export interface FilterProducts {
