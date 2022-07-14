@@ -1,0 +1,51 @@
+.carousel {
+  margin: 0 auto;
+  .carousel-container {
+    overflow: hidden;
+    position: relative; 
+    .carousel-buttons {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between; 
+      position: absolute;
+      .carousel-buttons-arrow {
+        width: 2.5rem;
+        height: 100%;
+        background: #ff6363;
+        z-index: 10;
+        padding: 0;
+        margin: 0;
+        transition-property: all;
+        transition-duration: 200ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        border: none;
+        color: #fff;
+        text-align: center;
+        opacity: 0.75;
+        &:hover {
+          opacity: 1;
+        }
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+      .carousel-buttons-icon {
+        width: 5rem;
+        height: 3rem;
+        margin-left: -1.25rem;
+      }
+    }
+    .carousel-card {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      z-index: 0; 
+      gap: 0.25rem;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      touch-action: pan-x pan-y pinch-zoom;
+    }
+  }
+}
