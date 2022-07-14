@@ -1,0 +1,28 @@
+
+html,
+body, * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  *:focus {
+    outline: none;
+  }
+}
+
+:focus {
+  outline: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+ul{
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
