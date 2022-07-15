@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./form-input.scss";
+import "./FormInput.scss";
 
 export type InputType = {
   id: number;

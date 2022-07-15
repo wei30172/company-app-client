@@ -1,5 +1,5 @@
 import React from "react";
-import "./values.scss";
+import "./Values.scss";
 
 type Ref = HTMLDivElement;
 type Props = {};

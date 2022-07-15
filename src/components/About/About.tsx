@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Carousel from "../Carousel/Carousel";
 import { CarouselItemType } from "../Carousel/Carousel";
 
-import "./about.scss";
+import "./About.scss";
 
 const carouselItems: CarouselItemType[] = [
   {

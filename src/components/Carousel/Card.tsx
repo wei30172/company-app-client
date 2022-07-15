@@ -1,7 +1,7 @@
 import React from "react";
 import { CarouselItemType } from "./Carousel";
 
-import "./card.scss";
+import "./Card.scss";
 
 type Props = {
   item: CarouselItemType;

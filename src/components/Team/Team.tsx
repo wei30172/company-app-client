@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
-import membersApi, { MemberType } from "../../api/membersApi";
-import "./team.scss";
+import membersApi, { IMember } from "../../api/membersApi";
+import "./Team.scss";
 
 type Ref = HTMLDivElement;
 type Props = {};
 
 const Team = React.forwardRef<Ref, Props>((props, ref) => {
-  const { data, loading, error } = useFetch<MemberType>(membersApi);
-  const [members, setMembers] = useState([] as MemberType[]);
+  const { data, loading, error } = useFetch<IMember>(membersApi);
+  const [members, setMembers] = useState([] as IMember[]);
 
   useEffect(() => {
     if (data) setMembers(data);

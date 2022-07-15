@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Card from "./Card";
-import "./carousel.scss";
+import "./Carousel.scss";
 
 export type CarouselItemType = {
   idx: number;
