@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Home, Products } from "./pages";
+import { Home, Products, NotFound } from "./pages";
 
 const MainRoutes = () => {
   return (
@@ -8,6 +8,7 @@ const MainRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/products" element={<Products />} />
       <Route path="/products/:name" element={<Products />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
