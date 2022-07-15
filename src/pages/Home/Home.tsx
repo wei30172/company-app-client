@@ -26,6 +26,7 @@ const Home = () => {
       <Navbar ref={navbarRef} mainRefs={mainRefs} />
       <About ref={aboutRef} />
       <Values ref={valuesRef} />
+      <Jobs ref={jobsRef} />
       <Mission ref={missionRef} />
       <Footer />
     </div>
