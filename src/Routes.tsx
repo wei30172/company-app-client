@@ -7,7 +7,6 @@ const MainRoutes = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/products" element={<Products />} />
-      <Route path="/products/:name" element={<Products />} />
       <Route path="*" element={<Navigate replace to="/" />} />
     </Routes>
   );
