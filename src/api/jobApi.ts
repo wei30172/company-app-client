@@ -6,7 +6,7 @@ const JobApi = axios.create({
   baseURL: "https://careers-node-server.herokuapp.com/job",
 });
 
-export type ApplicationInputsType = {
+export type IApplicationInputs = {
   jobId: string;
   name: string;
   email: string;
@@ -15,7 +15,7 @@ export type ApplicationInputsType = {
 
 export const addApplication = async (
   id: string,
-  inputs: ApplicationInputsType,
+  inputs: IApplicationInputs,
 ) => {
   try {
     const { data } = await JobApi.post(`/${id}`, inputs);

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export type JobItemType = {
+export type IJob = {
   _id: string;
   title: string;
   url: string;

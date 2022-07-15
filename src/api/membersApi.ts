@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export type MemberType = {
+export type IMember = {
   _id: string;
   name: string;
   title: string;
