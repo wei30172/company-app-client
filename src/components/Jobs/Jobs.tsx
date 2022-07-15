@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
-import jobsApi, { JobItemType } from "../../api/jobsApi";
-import { ApplicationInputsType } from "../../api/jobApi";
+import jobsApi, { IJob } from "../../api/jobsApi";
+import { IApplicationInputs } from "../../api/jobApi";
 import { JobSidebar } from "../index";
 import { scrollToSection } from "../../utils/scrollToSection";
 
@@ -11,16 +11,16 @@ type Ref = HTMLDivElement;
 type Props = {};
 
 const Jobs = React.forwardRef<Ref, Props>((props, ref) => {
-  const { data, loading, error } = useFetch<JobItemType>(jobsApi);
-  const [jobs, setJobs] = useState([] as JobItemType[]);
+  const { data, loading, error } = useFetch<IJob>(jobsApi);
+  const [jobs, setJobs] = useState([] as IJob[]);
   const [showJobSidebar, setShowJobSidebar] = useState(false);
-  const [applyInputs, setApplyInputs] = useState<ApplicationInputsType>({
+  const [applyInputs, setApplyInputs] = useState<IApplicationInputs>({
     jobId: "",
     name: "",
     email: "",
     url: "",
   });
-  const [applyJob, setApplyJob] = useState<JobItemType>({
+  const [applyJob, setApplyJob] = useState<IJob>({
     _id: "",
     title: "",
     url: "",
@@ -30,7 +30,7 @@ const Jobs = React.forwardRef<Ref, Props>((props, ref) => {
     if (data) setJobs(data);
   }, [data]);
 
-  const handleApply = (job: JobItemType) => {
+  const handleApply = (job: IJob) => {
     scrollToSection(ref as React.RefObject<HTMLDivElement>);
     setApplyInputs({ ...applyInputs, jobId: job._id });
     setApplyJob(job);

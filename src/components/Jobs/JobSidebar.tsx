@@ -1,16 +1,16 @@
 import React from "react";
-import { addApplication, ApplicationInputsType } from "../../api/jobApi";
-import { JobItemType } from "../../api/jobsApi";
+import { addApplication, IApplicationInputs } from "../../api/jobApi";
+import { IJob } from "../../api/jobsApi";
 import FormInput, { InputType } from "../Form/FormInput";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 import "./jobSidebar.scss";
 
 type Props = {
-  applyJob: JobItemType;
+  applyJob: IJob;
   showJobSidebar: boolean;
   setShowJobSidebar: React.Dispatch<React.SetStateAction<boolean>>;
-  applyInputs: ApplicationInputsType;
-  setApplyInputs: React.Dispatch<React.SetStateAction<ApplicationInputsType>>;
+  applyInputs: IApplicationInputs;
+  setApplyInputs: React.Dispatch<React.SetStateAction<IApplicationInputs>>;
 };
 
 const JobSidebar = ({
@@ -81,7 +81,7 @@ const JobSidebar = ({
             <FormInput
               key={input.id}
               {...input}
-              value={applyInputs[input.name as keyof ApplicationInputsType]}
+              value={applyInputs[input.name as keyof IApplicationInputs]}
               handleChange={handleChange}
             />
           ))}
