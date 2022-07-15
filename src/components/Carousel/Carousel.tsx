@@ -15,7 +15,7 @@ type Props = {
   setImageContent: React.Dispatch<React.SetStateAction<CarouselItemType>>;
 };
 
-const Carousel = ({ carouselItems, setImageContent }: Props) => {
+const Carousel: React.FC<Props> = ({ carouselItems, setImageContent }) => {
   const maxScrollWidth = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const carousel = useRef<HTMLDivElement>(null);

@@ -8,7 +8,7 @@ type Props = {
   setImageContent: React.Dispatch<React.SetStateAction<CarouselItemType>>;
 };
 
-const Card = ({ item, setImageContent }: Props) => {
+const Card: React.FC<Props> = ({ item, setImageContent }) => {
   return (
     <div className="carousel_item">
       <div className="carousel_item_image-container">

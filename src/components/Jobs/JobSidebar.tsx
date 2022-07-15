@@ -13,13 +13,13 @@ type Props = {
   setApplyInputs: React.Dispatch<React.SetStateAction<IApplicationInputs>>;
 };
 
-const JobSidebar = ({
+const JobSidebar: React.FC<Props> = ({
   applyJob,
   showJobSidebar,
   setShowJobSidebar,
   applyInputs,
   setApplyInputs,
-}: Props) => {
+}) => {
   const formInputs: InputType[] = [
     {
       id: 1,

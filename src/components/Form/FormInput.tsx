@@ -30,13 +30,13 @@ export function Input(props: InputProps) {
   );
 }
 
-const FormInput = ({
+const FormInput: React.FC<Props> = ({
   id,
   label,
   errorMessage,
   handleChange,
   ...inputProps
-}: Props) => {
+}) => {
   const [focused, setFocused] = useState(false);
 
   const handleFocus = () => {
