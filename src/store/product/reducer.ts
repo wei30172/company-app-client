@@ -19,19 +19,19 @@ const productReducer = (state = initialState, action: ProductActions) => {
     case FECTCH_PRODUCTS_REQUEST:
       return {
         ...state,
-        pending: true,
+        isLoading: true,
       };
     case FECTCH_PRODUCTS_SUCCESS:
       return {
         ...state,
-        pending: false,
+        isLoading: false,
         products: action.payload.products,
         error: null,
       };
     case FECTCH_PRODUCTS_FAILURE:
       return {
         ...state,
-        pending: false,
+        isLoading: false,
         products: [],
         error: action.payload.error,
       };

@@ -20,38 +20,38 @@ const authReducer = (state = initialState, action: AuthActions) => {
     case LOGIN_REQUEST:
       return {
         ...state,
-        pending: true,
+        isLoading: true,
       };
     case LOGIN_SUCCESS:
       return {
         ...state,
-        pending: false,
+        isLoading: false,
         token: action.payload.token,
         error: null,
       };
     case LOGIN_FAILURE:
       return {
         ...state,
-        pending: false,
+        isLoading: false,
         token: "",
         error: action.payload.error,
       };
     case SIGNUP_REQUEST:
       return {
         ...state,
-        pending: true,
+        isLoading: true,
       };
     case SIGNUP_SUCCESS:
       return {
         ...state,
-        pending: false,
+        isLoading: false,
         token: action.payload.token,
         error: null,
       };
     case SIGNUP_FAILURE:
       return {
         ...state,
-        pending: false,
+        isLoading: false,
         token: "",
         error: action.payload.error,
       };

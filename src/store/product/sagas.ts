@@ -1,14 +1,10 @@
-import axios from "axios";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import { fetchProductsSuccess, fetchProductsFailure } from "./actions";
 import { FECTCH_PRODUCTS_REQUEST } from "./actionTypes";
-
-const HttpClient = axios.create({
-  baseURL: "https://shoppingcart-node-server.herokuapp.com/api",
-});
+import ProductsApi from "../../api/productsApi";
 
 const fetchProducts = async () => {
-  const { data } = await HttpClient.get<IProduct[]>("/products");
+  const { data } = await ProductsApi.get<IProduct[]>("/");
   return data;
 };
 
@@ -21,8 +17,6 @@ function* fetchProductsSaga(action: any) {
         products: res.products,
       }),
     );
-
-    action.payload.callback(res.products);
   } catch (err: unknown) {
     if (err instanceof Error) {
       yield put(

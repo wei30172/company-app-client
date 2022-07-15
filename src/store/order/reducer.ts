@@ -21,38 +21,38 @@ const orderReducer = (state = initialState, action: OrderActions) => {
     case CREATE_ORDER_REQUEST:
       return {
         ...state,
-        pending: true,
+        isLoading: true,
       };
     case CREATE_ORDER_SUCCESS:
       return {
         ...state,
-        pending: false,
+        isLoading: false,
         order: action.payload.order,
         error: null,
       };
     case CREATE_ORDER_FAILURE:
       return {
         ...state,
-        pending: false,
+        isLoading: false,
         order: {},
         error: action.payload.error,
       };
     case FETCH_ORDERS_REQUEST:
       return {
         ...state,
-        pending: true,
+        isLoading: true,
       };
     case FETCH_ORDERS_SUCCESS:
       return {
         ...state,
-        pending: false,
+        isLoading: false,
         orders: action.payload.orders,
         error: null,
       };
     case FETCH_ORDERS_FAILURE:
       return {
         ...state,
-        pending: false,
+        isLoading: false,
         orders: [],
         error: action.payload.error,
       };

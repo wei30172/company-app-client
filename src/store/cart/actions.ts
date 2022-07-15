@@ -1,20 +1,12 @@
 import { ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART } from "./actionTypes";
-import {
-  AddToCartPayload,
-  RemoveFromCartPayload,
-  AddToCart,
-  RemoveFromCart,
-  ClearCart,
-} from "./types";
+import { AddToCart, RemoveFromCart, ClearCart } from "./types";
 
-export const addToCart = (payload: AddToCartPayload): AddToCart => ({
+export const addToCart = (payload: IProduct): AddToCart => ({
   type: ADD_TO_CART,
   payload,
 });
 
-export const removeFromCart = (
-  payload: RemoveFromCartPayload,
-): RemoveFromCart => ({
+export const removeFromCart = (payload: IProduct): RemoveFromCart => ({
   type: REMOVE_FROM_CART,
   payload,
 });

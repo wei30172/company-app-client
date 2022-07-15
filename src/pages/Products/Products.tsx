@@ -1,8 +1,15 @@
 import React from "react";
-import "./products.scss";
+import { ProductsList } from "../../components";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const Products = () => {
-  return <div>Products</div>;
+  const { inputRef } = useScrollToTop(200);
+
+  return (
+    <div ref={inputRef} className="products">
+      <ProductsList />
+    </div>
+  );
 };
 
 export default Products;

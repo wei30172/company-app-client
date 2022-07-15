@@ -9,11 +9,11 @@ const cartReducer = (state = initialState, action: CartActions) => {
   switch (action.type) {
     case ADD_TO_CART:
       return {
-        cartItems: action.payload.cartItems,
+        cartItems: action.payload,
       };
     case REMOVE_FROM_CART:
       return {
-        cartItems: action.payload.cartItems,
+        cartItems: action.payload,
       };
     case CLEAR_CART:
       return {
