@@ -85,11 +85,7 @@ const JobSidebar: React.FC<Props> = ({
               handleChange={handleChange}
             />
           ))}
-          <input
-            type="submit"
-            value="Submit"
-            className="cursor-pointer btn _primary"
-          />
+          <input type="submit" value="Submit" className="btn" />
         </>
       </form>
     </div>

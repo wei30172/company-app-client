@@ -64,10 +64,7 @@ const Jobs = React.forwardRef<Ref, Props>((props, ref) => {
                   </div>
                   {/* hover effects */}
                   <div className="jobs_item_button">
-                    <button
-                      className="btn _primary"
-                      onClick={() => handleApply(job)}
-                    >
+                    <button className="btn" onClick={() => handleApply(job)}>
                       Apply
                     </button>
                   </div>
