@@ -1,6 +1,14 @@
 import React from "react";
 import { useRef } from "react";
-import { Navbar, About, Values, Jobs, Mission, Footer } from "../../components";
+import {
+  Navbar,
+  About,
+  Values,
+  Jobs,
+  Team,
+  Mission,
+  Footer,
+} from "../../components";
 
 import "./home.scss";
 
@@ -26,6 +34,7 @@ const Home = () => {
       <Navbar ref={navbarRef} mainRefs={mainRefs} />
       <About ref={aboutRef} />
       <Values ref={valuesRef} />
+      <Team ref={teamRef} />
       <Jobs ref={jobsRef} />
       <Mission ref={missionRef} />
       <Footer />

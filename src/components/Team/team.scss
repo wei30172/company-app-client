@@ -1,0 +1,64 @@
+.team {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 5rem;
+  .team_container {
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .team_title {
+      margin-bottom: 1.5rem;
+      p {
+        display: inline;
+        margin-bottom: 0.5rem;
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+        font-weight: bold;
+        border-bottom: 4px solid #ff6363;
+      }
+    }
+    .team_menbers {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      width: 100%;
+      text-align: center;
+      .team_menbers_menber {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        img {
+          width: 50%;
+          border-radius: 9999px;
+          transition-duration: 500ms;
+          &:hover {
+            transform: scale(1.05);
+            transform: translateY(-0.5rem);
+          }
+        }
+        p {
+          font-size: 0.75rem;
+          line-height: 1rem;
+          &:nth-child(3) {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .team {
+    .team_container {
+      .team_menbers {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+  }
+ }
