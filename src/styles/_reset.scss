@@ -5,9 +5,18 @@ body, * {
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
+  border: 0;
   *:focus {
     outline: none;
   }
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #333;
 }
 
 :focus {

@@ -53,7 +53,6 @@ const carouselItems: CarouselItemType[] = [
 ];
 
 type Ref = HTMLDivElement;
-
 type Props = {};
 
 const About = React.forwardRef<Ref, Props>((props, ref) => {
