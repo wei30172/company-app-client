@@ -1,15 +1,18 @@
-import "./ProductItem.scss";
 import { useState } from "react";
 import formatCurrency from "../../utils/formatCurrency";
+import {
+  AddToCartRequestPayload,
+  AddToCartRequest,
+} from "../../store/cart/types";
 import ProductModal from "../ProductModal/ProductModal";
-import { AddToCart } from "../../store/cart/types";
+import "./ProductItem.scss";
 
 type Props = {
   product: IProduct;
-  addToCart: (payload: IProduct) => AddToCart;
+  addToCartRequest: (product: AddToCartRequestPayload) => AddToCartRequest;
 };
 
-const ProductItem: React.FC<Props> = ({ product, addToCart }) => {
+const ProductItem: React.FC<Props> = ({ product, addToCartRequest }) => {
   const [showProductModal, setShowProductModal] = useState(false);
 
   const openModal = () => {
@@ -30,13 +33,16 @@ const ProductItem: React.FC<Props> = ({ product, addToCart }) => {
         <h3>{product.title}</h3>
         <h3>$ {formatCurrency(product.price)}</h3>
       </div>
-      <button className="btn" onClick={() => addToCart(product)}>
+      <button
+        className="btn"
+        onClick={() => addToCartRequest({ cartItem: product })}
+      >
         Add to Cart
       </button>
       {showProductModal && (
         <ProductModal
           product={product}
-          addToCart={addToCart}
+          addToCartRequest={addToCartRequest}
           closeModal={closeModal}
         />
       )}

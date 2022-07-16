@@ -3,15 +3,15 @@ import {
   PropsFromRedux,
   productsConnector,
 } from "../../store/product/connector";
-import "./ProductsList.scss";
 import ProductItem from "../ProductItem/ProductItem";
+import "./ProductsList.scss";
 
 const ProductsList = ({
   products,
   isLoading,
   error,
   fetchProductsRequest,
-  addToCart,
+  addToCartRequest,
 }: PropsFromRedux) => {
   useEffect(() => {
     fetchProductsRequest();
@@ -26,7 +26,10 @@ const ProductsList = ({
       <div className="products-list">
         {products.map((product: IProduct) => (
           <div key={product._id}>
-            <ProductItem product={product} addToCart={addToCart} />
+            <ProductItem
+              product={product}
+              addToCartRequest={addToCartRequest}
+            />
           </div>
         ))}
       </div>

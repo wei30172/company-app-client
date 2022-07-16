@@ -2,14 +2,22 @@ import "./ProductModal.scss";
 import Modal from "@material-ui/core/Modal";
 import CloseIcon from "@material-ui/icons/Close";
 import formatCurrency from "../../utils/formatCurrency";
+import {
+  AddToCartRequestPayload,
+  AddToCartRequest,
+} from "../../store/cart/types";
 
 type Props = {
   product: IProduct;
-  addToCart: (product: IProduct) => void;
+  addToCartRequest: (product: AddToCartRequestPayload) => AddToCartRequest;
   closeModal: () => void;
 };
 
-const ProductModal: React.FC<Props> = ({ product, addToCart, closeModal }) => {
+const ProductModal: React.FC<Props> = ({
+  product,
+  addToCartRequest,
+  closeModal,
+}) => {
   return (
     <Modal className="product-modal" open={true} onClose={closeModal}>
       <>
@@ -32,7 +40,7 @@ const ProductModal: React.FC<Props> = ({ product, addToCart, closeModal }) => {
             <button
               className="btn"
               onClick={() => {
-                addToCart(product);
+                addToCartRequest({ cartItem: product });
                 closeModal();
               }}
             >
