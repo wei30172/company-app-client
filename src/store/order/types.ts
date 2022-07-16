@@ -2,6 +2,7 @@ import {
   CREATE_ORDER_REQUEST,
   CREATE_ORDER_SUCCESS,
   CREATE_ORDER_FAILURE,
+  CLEAR_ORDER_REQUEST,
   FETCH_ORDERS_REQUEST,
   FETCH_ORDERS_SUCCESS,
   FETCH_ORDERS_FAILURE,
@@ -42,6 +43,10 @@ export interface CreateOrderRequest {
 export interface CreateOrderSuccess {
   type: typeof CREATE_ORDER_SUCCESS;
   payload: CreateOrderSuccessPayload;
+}
+
+export interface ClearOrderRequest {
+  type: typeof CLEAR_ORDER_REQUEST;
 }
 
 export interface CreateOrderFailure {

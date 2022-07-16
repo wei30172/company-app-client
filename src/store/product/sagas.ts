@@ -8,7 +8,7 @@ const fetchProducts = async () => {
   return data;
 };
 
-function* fetchProductsSaga(action: any) {
+function* fetchProductsSaga() {
   try {
     const res: { products: IProduct[] } = yield call(fetchProducts);
 

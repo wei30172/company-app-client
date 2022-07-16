@@ -1,6 +1,6 @@
 import { connect, ConnectedProps } from "react-redux";
 import { fetchProductsRequest } from "./actions";
-import { addToCart } from "../cart/actions";
+import { addToCartRequest } from "../cart/actions";
 
 interface StateProps {
   product: ProductsState;
@@ -13,7 +13,7 @@ const mapState = (state: StateProps) => ({
 
 const mapDispatch = {
   fetchProductsRequest,
-  addToCart,
+  addToCartRequest,
 };
 
 export const productsConnector = connect(mapState, mapDispatch);

@@ -2,6 +2,7 @@ import {
   CREATE_ORDER_REQUEST,
   CREATE_ORDER_SUCCESS,
   CREATE_ORDER_FAILURE,
+  CLEAR_ORDER_REQUEST,
   FETCH_ORDERS_REQUEST,
   FETCH_ORDERS_SUCCESS,
   FETCH_ORDERS_FAILURE,
@@ -13,6 +14,7 @@ import {
   CreateOrderFailurePayload,
   FetchOrdersSuccessPayload,
   FetchOrdersFailurePayload,
+  ClearOrderRequest,
   CreateOrderRequest,
   CreateOrderSuccess,
   CreateOrderFailure,
@@ -40,6 +42,10 @@ export const createOrderFailure = (
 ): CreateOrderFailure => ({
   type: CREATE_ORDER_FAILURE,
   payload,
+});
+
+export const clearOrderRequest = (): ClearOrderRequest => ({
+  type: CLEAR_ORDER_REQUEST,
 });
 
 export const fetchOrdersRequest = (): FetchOrdersRequest => ({
