@@ -1,0 +1,15 @@
+.cart {
+  width: 80%;
+  padding: 20px;
+  .cart_header {
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    display: flex;
+    border-bottom: 0.1rem #c0c0c0 solid;
+  }
+  .proceed_botton {
+    width: 100%;
+    box-shadow: 2px 6px 10px rgba(0,0,0,0.1);
+  }
+}

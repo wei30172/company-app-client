@@ -16,7 +16,6 @@ export interface CreateOrderPayload {
     total: number;
     cartItems: IProduct[];
   };
-  callback: any;
 }
 
 export interface CreateOrderSuccessPayload {

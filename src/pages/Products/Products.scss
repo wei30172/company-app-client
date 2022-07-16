@@ -1,0 +1,27 @@
+.products {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  .main {
+    flex: 3;
+  }
+  .sidebar {
+    background-color: #f5f5f5;
+    flex: 1;
+  }
+}
+
+.cart-button {
+  color: #333;
+  position: absolute;
+  z-index: 99;
+  top: 1rem;
+  right: 1rem;
+}
+
+@media (min-width: 768px) { 
+  .products {
+    display: flex;
+    flex-direction: row;
+  }  
+}

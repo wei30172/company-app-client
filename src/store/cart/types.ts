@@ -1,17 +1,33 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART } from "./actionTypes";
+import {
+  ADD_TO_CART_REQUEST,
+  REMOVE_FROM_CART_REQUEST,
+  CLEAR_CART_REQUEST,
+} from "./actionTypes";
 
-export interface AddToCart {
-  type: typeof ADD_TO_CART;
-  payload: IProduct;
+export interface AddToCartRequestPayload {
+  cartItem: IProduct;
 }
 
-export interface RemoveFromCart {
-  type: typeof REMOVE_FROM_CART;
-  payload: IProduct;
+export interface RemoveFromCartRequestPayload {
+  cartItem: IProduct;
+  remove: boolean;
 }
 
-export interface ClearCart {
-  type: typeof CLEAR_CART;
+export interface AddToCartRequest {
+  type: typeof ADD_TO_CART_REQUEST;
+  payload: AddToCartRequestPayload;
 }
 
-export type CartActions = AddToCart | RemoveFromCart | ClearCart;
+export interface RemoveFromCartRequest {
+  type: typeof REMOVE_FROM_CART_REQUEST;
+  payload: RemoveFromCartRequestPayload;
+}
+
+export interface ClearCartRequest {
+  type: typeof CLEAR_CART_REQUEST;
+}
+
+export type CartActions =
+  | AddToCartRequest
+  | RemoveFromCartRequest
+  | ClearCartRequest;

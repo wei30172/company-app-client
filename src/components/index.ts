@@ -10,3 +10,4 @@ export { default as Mission } from "./Mission/Mission";
 
 // Products
 export { default as ProductsList } from "./ProductsList/ProductsList";
+export { default as Cart } from "./Cart/Cart";

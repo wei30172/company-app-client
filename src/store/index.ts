@@ -20,5 +20,10 @@ sagaMiddleware.run(rootSaga);
 export default store;
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>;
+export type RootState = {
+  auth: AuthState;
+  product: ProductsState;
+  order: OrdersState;
+  cart: CartState;
+};
 export type AppDispatch = typeof store.dispatch;

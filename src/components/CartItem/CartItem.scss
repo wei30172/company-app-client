@@ -1,0 +1,32 @@
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  padding: 1rem 0;
+  div {
+    flex: 1;
+  }
+  .cart-item_information,
+  .cart-item_buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      padding: 0 1rem;
+    }
+  }
+  .remove {
+    background-color: #f0c040;
+    color: #333;
+    margin-right: .5rem;
+  }
+  .count {
+    margin: 0 10px
+  }
+  img {
+    width: 5rem;
+    object-fit: cover;
+    margin-left: 40px;
+  }
+}
