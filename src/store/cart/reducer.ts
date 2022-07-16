@@ -6,7 +6,7 @@ import {
 import { CartActions } from "./types";
 
 const initialState: CartState = {
-  cartItems: JSON.parse(localStorage.getItem("cartItems") || "[]"),
+  cartItems: [],
 };
 
 const cartReducer = (state = initialState, action: CartActions) => {
@@ -23,8 +23,6 @@ const cartReducer = (state = initialState, action: CartActions) => {
               : item,
           )
         : [...cartItems, { ...product, count: 1 }];
-
-      localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
       return {
         cartItems: newCartItems,
@@ -48,6 +46,7 @@ const cartReducer = (state = initialState, action: CartActions) => {
           return [...totalItems, item];
         }
       }, [] as IProduct[]);
+
       return {
         cartItems: newCartItems,
       };

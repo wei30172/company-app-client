@@ -10,7 +10,7 @@
     width: 100%;
     padding: 0.5rem;
     background-color: #E5E7EB;
-    &.focused ~ span{
+    &:invalid.focused ~ span{
       display: block;
       margin-bottom: 0;
     }

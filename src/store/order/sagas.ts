@@ -12,14 +12,8 @@ const HttpClient = axios.create({
   baseURL: "https://shoppingcart-node-server.herokuapp.com/api",
 });
 
-const createOrder = async (payload: {
-  email: string;
-  name: string;
-  address: string;
-  total: number;
-  cartItems: IProduct[];
-}) => {
-  const { email, name, address, total, cartItems } = payload;
+const createOrder = async (payload: { order: IOrder }) => {
+  const { email, name, address, total, cartItems } = payload.order;
   const { data } = await HttpClient.post<IOrder>("/orders", {
     email,
     name,
@@ -36,23 +30,15 @@ const fetchOrders = async () => {
 };
 
 function* createOrderSaga(action: any) {
+  console.log(action);
   try {
-    const { email, name, address, total, cartItems } = action.payload;
-    const res: { order: IOrder } = yield call(createOrder, {
-      email,
-      name,
-      address,
-      total,
-      cartItems,
-    });
+    const res: { order: IOrder } = yield call(createOrder, action.payload);
 
     yield put(
       createOrderSuccess({
         order: res.order,
       }),
     );
-
-    action.payload.callback(res.order);
   } catch (err: unknown) {
     if (err instanceof Error) {
       yield put(
@@ -73,8 +59,6 @@ function* fetchOrdersSaga(action: any) {
         orders: res.orders,
       }),
     );
-
-    action.payload.callback(res.orders);
   } catch (err: unknown) {
     if (err instanceof Error) {
       yield put(

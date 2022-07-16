@@ -9,7 +9,7 @@ import {
 } from "./actionTypes";
 
 export interface CreateOrderPayload {
-  values: {
+  order: {
     email: string;
     name: string;
     address: string;
