@@ -1,0 +1,33 @@
+.orders {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  h1 {
+    text-align: center;
+  }
+  .orders_empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .orders_list {
+    color: #333;
+    table {
+      thead {
+        th{
+          padding: 10px;
+        }
+      }
+      tbody{
+        tr:nth-child(odd) {
+          background-color: #f5f5f5;
+        }
+        td{
+          padding: 5px;
+        }
+      }
+    }
+  }
+}

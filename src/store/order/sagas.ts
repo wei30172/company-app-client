@@ -7,6 +7,8 @@ import {
   fetchOrdersFailure,
 } from "./actions";
 import { CREATE_ORDER_REQUEST, FETCH_ORDERS_REQUEST } from "./actionTypes";
+import { CLEAR_CART_REQUEST } from "../cart/actionTypes";
+import { toast } from "react-hot-toast";
 
 const HttpClient = axios.create({
   baseURL: "https://shoppingcart-node-server.herokuapp.com/api",
@@ -30,15 +32,18 @@ const fetchOrders = async () => {
 };
 
 function* createOrderSaga(action: any) {
-  console.log(action);
   try {
     const res: { order: IOrder } = yield call(createOrder, action.payload);
-
-    yield put(
-      createOrderSuccess({
-        order: res.order,
-      }),
-    );
+    yield all([
+      toast.success("Your order has been placed."),
+      put(
+        createOrderSuccess({
+          order: res.order,
+        }),
+      ),
+      put({ type: CLEAR_CART_REQUEST }),
+      put({ type: FETCH_ORDERS_REQUEST }),
+    ]);
   } catch (err: unknown) {
     if (err instanceof Error) {
       yield put(
@@ -50,7 +55,7 @@ function* createOrderSaga(action: any) {
   }
 }
 
-function* fetchOrdersSaga(action: any) {
+function* fetchOrdersSaga() {
   try {
     const res: { orders: IOrder[] } = yield call(fetchOrders);
 

@@ -1,10 +1,6 @@
 import { connect, ConnectedProps } from "react-redux";
-import {
-  addToCartRequest,
-  removeFromCartRequest,
-  clearCartRequest,
-} from "./actions";
-import { createOrderRequest, clearOrderRequest } from "../order/actions";
+import { addToCartRequest, removeFromCartRequest } from "./actions";
+import { createOrderRequest } from "../order/actions";
 
 interface StateProps {
   cart: CartState;
@@ -18,9 +14,7 @@ const mapState = (state: StateProps) => ({
 const mapDispatch = {
   addToCartRequest,
   removeFromCartRequest,
-  clearCartRequest,
   createOrderRequest,
-  clearOrderRequest,
 };
 
 export const cartConnector = connect(mapState, mapDispatch);
