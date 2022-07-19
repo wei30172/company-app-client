@@ -5,6 +5,8 @@ import {
 } from "../../store/product/connector";
 import ProductItem from "../ProductItem/ProductItem";
 import "./ProductsList.scss";
+import HourglassEmptyIcon from "@material-ui/icons/HourglassEmpty";
+import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
 
 const ProductsList = ({
   products,
@@ -18,9 +20,9 @@ const ProductsList = ({
   }, [fetchProductsRequest]);
 
   return isLoading ? (
-    <div>Loading...</div>
+    <HourglassEmptyIcon />
   ) : error ? (
-    <div>Error...</div>
+    <ErrorOutlineIcon />
   ) : (
     products && (
       <div className="products-list">
