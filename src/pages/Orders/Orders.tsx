@@ -1,4 +1,3 @@
-import "./Orders.scss";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { PropsFromRedux, orderConnector } from "../../store/order/connector";
@@ -6,6 +5,7 @@ import formatCurrency from "../../utils/formatCurrency";
 import HourglassEmptyIcon from "@material-ui/icons/HourglassEmpty";
 import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import "./Orders.scss";
 
 const Orders = ({
   orders,
@@ -60,7 +60,7 @@ const Orders = ({
                         <p>${formatCurrency(order.total)}</p>
                       </td>
                       <td>
-                        <Link to={`/order/${order._id}`}>
+                        <Link to={`/orders/${order._id}`}>
                           <button className="btn">Details</button>
                         </Link>
                       </td>
