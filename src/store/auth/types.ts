@@ -5,10 +5,24 @@ import {
   SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
   SIGNUP_FAILURE,
+  LOGOUT_REQUEST,
 } from "./actionTypes";
 
+export interface LoginPayloadValues {
+  email: string;
+  password: string;
+}
+
+export interface SignupPayloadValues {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
 export interface LoginPayload {
-  values: { email: string; password: string };
+  values: LoginPayloadValues;
   callback: any;
 }
 
@@ -21,7 +35,7 @@ export interface LoginFailurePayload {
 }
 
 export interface SignupPayload {
-  values: { email: string; password: string };
+  values: SignupPayloadValues;
   callback: any;
 }
 
@@ -63,10 +77,15 @@ export interface SignupFailure {
   payload: SignupFailurePayload;
 }
 
+export interface LogoutRequest {
+  type: typeof LOGOUT_REQUEST;
+}
+
 export type AuthActions =
   | LoginRequest
   | LoginSuccess
   | LoginFailure
   | SignupRequest
   | SignupSuccess
-  | SignupFailure;
+  | SignupFailure
+  | LogoutRequest;

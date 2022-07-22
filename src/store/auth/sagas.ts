@@ -7,35 +7,31 @@ import {
   signupFailure,
 } from "./actions";
 import { LOGIN_REQUEST, SIGNUP_REQUEST } from "./actionTypes";
+import { SignupPayloadValues, LoginPayloadValues } from "./types";
 
 const HttpClient = axios.create({
-  baseURL: "https://reqres.in/api",
+  baseURL: "https://posts-node-server.herokuapp.com",
 });
 
-const userLogin = async (payload: { email: string; password: string }) => {
-  const { email, password } = payload;
-  const { data } = await HttpClient.post<IAuth>("/login", {
-    email,
-    password,
-  });
+const userLogin = async (payload: {
+  values: LoginPayloadValues;
+  callback: () => void;
+}) => {
+  const { data } = await HttpClient.post<IAuth>("/user/login", payload.values);
   return data;
 };
-// test: eve.holt@reqres.in / cityslicka
 
-const userSignup = async (payload: { email: string; password: string }) => {
-  const { email, password } = payload;
-  const { data } = await HttpClient.post<IAuth>("/signup", {
-    email,
-    password,
-  });
+const userSignup = async (payload: {
+  values: SignupPayloadValues;
+  callback: () => void;
+}) => {
+  const { data } = await HttpClient.post<IAuth>("/user/signup", payload.values);
   return data;
 };
-// test: eve.holt@reqres.in / pistol
 
 function* loginSaga(action: any) {
   try {
-    const { email, password } = action.payload;
-    const res: IAuth = yield call(userLogin, { email, password });
+    const res: IAuth = yield call(userLogin, action.payload);
 
     yield put(
       loginSuccess({
@@ -57,8 +53,7 @@ function* loginSaga(action: any) {
 
 function* signupSaga(action: any) {
   try {
-    const { email, password } = action.payload;
-    const res: IAuth = yield call(userSignup, { email, password });
+    const res: IAuth = yield call(userSignup, action.payload);
 
     yield put(
       signupSuccess({

@@ -5,12 +5,15 @@ import {
   SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
   SIGNUP_FAILURE,
+  LOGOUT_REQUEST,
 } from "./actionTypes";
 
 import { AuthActions } from "./types";
 
+const localToken = localStorage.getItem("user");
+
 const initialState: AuthState = {
-  token: "",
+  token: localToken ? JSON.parse(localToken) : "",
   isLoading: false,
   error: "",
 };
@@ -54,6 +57,13 @@ const authReducer = (state = initialState, action: AuthActions) => {
         isLoading: false,
         token: "",
         error: action.payload.error,
+      };
+    case LOGOUT_REQUEST:
+      return {
+        ...state,
+        isLoading: false,
+        token: "",
+        error: null,
       };
     default:
       return {

@@ -5,6 +5,7 @@ import {
   SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
   SIGNUP_FAILURE,
+  LOGOUT_REQUEST,
 } from "./actionTypes";
 
 import {
@@ -20,6 +21,7 @@ import {
   SignupRequest,
   SignupSuccess,
   SignupFailure,
+  LogoutRequest,
 } from "./types";
 
 export const loginRequest = (payload: LoginPayload): LoginRequest => ({
@@ -54,4 +56,8 @@ export const signupFailure = (
 ): SignupFailure => ({
   type: SIGNUP_FAILURE,
   payload,
+});
+
+export const logoutRequest = (): LogoutRequest => ({
+  type: LOGOUT_REQUEST,
 });

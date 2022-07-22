@@ -5,7 +5,12 @@ import HourglassEmptyIcon from "@material-ui/icons/HourglassEmpty";
 import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
 import "./Order.scss";
 
-const Orders = ({ orders, isLoading, error, fetchOrdersRequest }: PropsFromRedux) => {
+const Orders = ({
+  orders,
+  isLoading,
+  error,
+  fetchOrdersRequest,
+}: PropsFromRedux) => {
   const params = useParams();
   const { orderId } = params;
 
@@ -50,7 +55,7 @@ const Orders = ({ orders, isLoading, error, fetchOrdersRequest }: PropsFromRedux
             <div className="order_list">
               <div>
                 <h1>Order: {orderId}</h1>
-              
+
                 <div className="order_list_info">
                   <h2>Shipping Address</h2>
                   {address}
