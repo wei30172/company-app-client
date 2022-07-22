@@ -7,47 +7,47 @@ import "./About.scss";
 const carouselItems: CarouselItemType[] = [
   {
     idx: 1,
-    title: "Søren (COO/founder) and Sara, (CEO/founder) bench testing",
+    title: "Bench Testing",
     imageName: "carousel1.png",
   },
   {
     idx: 2,
-    title: "Brian (VP of R&D) testing Q-Pad strips",
+    title: "COO/founder and CEO/founder",
     imageName: "carousel2.png",
   },
   {
     idx: 3,
-    title: "Sara, Angela (Investor) and Søren",
+    title: "Investor and CEO/founder",
     imageName: "carousel3.png",
   },
   {
     idx: 4,
-    title: "Production facility in Milan, Italy",
+    title: "Production Facility",
     imageName: "carousel4.png",
   },
   {
     idx: 5,
-    title: "Fatima at the American Diabetes Association Tour de Cure",
+    title: "American Diabetes Association Tour",
     imageName: "carousel5.png",
   },
   {
     idx: 6,
-    title: "Christian (VP of Admin), Søren and Sara after hike",
+    title: "Startup Meetup",
     imageName: "carousel6.png",
   },
   {
     idx: 7,
-    title: "Søren, Bill (advisor) and Sara",
+    title: "Our Office",
     imageName: "carousel7.png",
   },
   {
     idx: 8,
-    title: "Søren, Bill (advisor) and Sara",
+    title: "Marketing Activity",
     imageName: "carousel8.png",
   },
   {
     idx: 9,
-    title: "Scalable manufacturing of Q-Pads",
+    title: "Our Products",
     imageName: "carousel9.png",
   },
 ];
@@ -63,14 +63,14 @@ const About = React.forwardRef<Ref, Props>((props, ref) => {
         <div className="about_content">
           <div>
             <p className="about_content_paragraph">
-              By using Qvin, you’re actively helping our healthcare system
-              understand women's’ bodies and craft care that positively impacts
-              lives for the generations to come.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
             </p>
             <p className="about_content_paragraph">
-              We know that together, we can change the world. At Qvin, you will
-              make an impact on the future of women’s health and carve your path
-              as a leader, innovator, and change-maker.
+              It has survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged.
             </p>
           </div>
           <div>

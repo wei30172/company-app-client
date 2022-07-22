@@ -60,7 +60,7 @@ const Jobs = React.forwardRef<Ref, Props>((props, ref) => {
                 <div>
                   <div className="jobs_item_title">
                     <p>{job.title},</p>
-                    <p>Menlo Park</p>
+                    <p>San Jose</p>
                   </div>
                   {/* hover effects */}
                   <div className="jobs_item_button">

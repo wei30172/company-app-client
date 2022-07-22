@@ -12,10 +12,11 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 1rem;
+      gap: 2rem;
       .about_content_paragraph {
         color: #333;
         max-width: 300px;
+        text-align: justify;
         &:nth-child(1) {
           margin-bottom: 1rem;
         }
@@ -47,7 +48,7 @@
         .about_content_paragraph {
           font-size: 1.25rem;
           line-height: 1.75rem;
-          max-width: 500px;
+          max-width: 450px;
         }
         .about_content_image {
           display: block;

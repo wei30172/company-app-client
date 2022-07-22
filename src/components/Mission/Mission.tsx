@@ -13,7 +13,7 @@ const Mission = React.forwardRef<Ref, Props>((props, ref) => {
       </div>
       <div className="mission_text">
         <p>Mission</p>
-        <p>Revolutionizing healthcare for women starts with you.</p>
+        <p>There are many variations of passages of Lorem Ipsum available.</p>
       </div>
     </div>
   );

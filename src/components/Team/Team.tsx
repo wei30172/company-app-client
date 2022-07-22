@@ -39,7 +39,7 @@ const Team = React.forwardRef<Ref, Props>((props, ref) => {
               >
                 <img
                   className="shadow-md"
-                  src={require(`../../assets/members/${member.url}.png`)}
+                  src={require(`../../assets/members/member.png`)}
                   alt="member"
                 />
                 <p>{member.name},</p>

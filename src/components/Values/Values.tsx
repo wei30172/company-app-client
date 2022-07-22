@@ -9,24 +9,21 @@ const Values = React.forwardRef<Ref, Props>((props, ref) => {
     <div ref={ref} className="values">
       <div className="values_container">
         <div className="values_paragraph">
-          <p className="values_paragraph_title">Think big and scale</p>
+          <p className="values_paragraph_title">Lorem Ipsum</p>
           <p className="values_paragraph_text">
-            We're always looking for ways to simplify, do better, and go faster
-            to impact over 2.2 billion women.
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
           </p>
         </div>
         <div className="values_paragraph">
-          <p className="values_paragraph_title">Take ownership</p>
+          <p className="values_paragraph_title">Lorem Ipsum</p>
           <p className="values_paragraph_text">
-            You'll be given the autotomy and trust you need. It's okay to fail,
-            learn, and try again - that's how we grow!
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
           </p>
         </div>
         <div className="values_paragraph">
-          <p className="values_paragraph_title">People and Health first</p>
+          <p className="values_paragraph_title">Lorem Ipsum</p>
           <p className="values_paragraph_text">
-            We take care of our team! We eat healthy, exercise together and
-            offer premium healthcare.
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
           </p>
         </div>
       </div>

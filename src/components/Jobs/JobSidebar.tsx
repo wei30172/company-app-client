@@ -73,9 +73,7 @@ const JobSidebar: React.FC<Props> = ({
       <form onSubmit={handleJobSubmit}>
         <>
           <div className="form_title">
-            <a href={applyJob.url} target="_blank" rel="noreferrer">
-              <p className="cursor-pointer">{applyJob.title}</p>
-            </a>
+            <p className="cursor-pointer">{applyJob.title}</p>
           </div>
           {formInputs.map((input: InputType) => (
             <FormInput
