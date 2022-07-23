@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import {
-  Navbar,
+  HomeNavbar,
   ProductsIntro,
   About,
   Mission,
@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar ref={navbarRef} mainRefs={mainRefs} />
+      <HomeNavbar ref={navbarRef} mainRefs={mainRefs} />
       <ProductsIntro ref={productsRef} />
       <About ref={aboutRef} />
       <Mission ref={missionRef} />

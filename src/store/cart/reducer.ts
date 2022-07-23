@@ -4,6 +4,7 @@ import {
   CLEAR_CART_REQUEST,
 } from "./actionTypes";
 import { CartActions } from "./types";
+import { toast } from "react-hot-toast";
 
 const initialState: CartState = {
   cartItems: [],
@@ -23,6 +24,8 @@ const cartReducer = (state = initialState, action: CartActions) => {
               : item,
           )
         : [...cartItems, { ...product, count: 1 }];
+
+      toast.success(`Add ${action.payload.cartItem.title} successfully!`);
 
       return {
         cartItems: newCartItems,

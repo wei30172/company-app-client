@@ -18,9 +18,13 @@ const Orders = ({
   }, [fetchOrdersRequest]);
 
   return isLoading ? (
-    <HourglassEmptyIcon />
+    <div className="page_state">
+      <HourglassEmptyIcon />
+    </div>
   ) : error ? (
-    <ErrorOutlineIcon />
+    <div className="page_state">
+      <ErrorOutlineIcon />
+    </div>
   ) : (
     orders && (
       <div className="orders">

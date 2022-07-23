@@ -1,4 +1,5 @@
 import React, { useState, RefObject } from "react";
+import { useNavigate } from "react-router-dom";
 import CloseIcon from "@material-ui/icons/Close";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "../../assets/logo.png";
@@ -16,6 +17,8 @@ type Props = {
 };
 
 const Navbar = React.forwardRef<Ref, Props>((props, ref) => {
+  const navigate = useNavigate();
+
   const { aboutRef, missionRef, productsRef } = props.mainRefs;
 
   const [showMobMenu, setShowMobMenu] = useState(false);
@@ -37,6 +40,12 @@ const Navbar = React.forwardRef<Ref, Props>((props, ref) => {
       {/* menu */}
       <div className="navbar_menu">
         <ul>
+          <li
+            className="cursor-pointer"
+            onClick={() => navigate("/products")}
+          >
+            Buy Now
+          </li>
           <li
             className="cursor-pointer"
             onClick={() => scrollToSection(productsRef)}
@@ -68,6 +77,7 @@ const Navbar = React.forwardRef<Ref, Props>((props, ref) => {
 
       {/* mobile menu */}
       <ul className={!showMobMenu ? "navbar_hidden" : "navbar_mobile-menu"}>
+        <li onClick={() => navigate("/products")}>Buy Now</li>
         <li onClick={() => handleClick(productsRef)}>Our Products</li>
         <li onClick={() => handleClick(aboutRef)}>About Us</li>
         <li onClick={() => handleClick(missionRef)}>Our Mission</li>
