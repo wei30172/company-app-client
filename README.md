@@ -2,7 +2,7 @@
 
 A Company website template, built with React.
 
-## Project Screen Shots
+## Project Screenshots
 
 
 ## Getting Started with Create React App

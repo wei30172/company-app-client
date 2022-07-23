@@ -55,7 +55,7 @@ const CartItem: React.FC<Props> = ({
         </div>
       </div>
       <img
-        src={require(`../../assets/products${item.image}`)}
+        src={require(`../../assets/products/${item.image}.jpg`)}
         alt={item.title}
       />
     </div>

@@ -24,7 +24,7 @@ const ProductModal: React.FC<Props> = ({
         <CloseIcon className="close-button" onClick={closeModal} />
         <div className="product-details">
           <img
-            src={require(`../../assets/products${product.image}`)}
+            src={require(`../../assets/products/${product.image}.jpg`)}
             alt={product.title}
           />
           <div className="product-details_description">
@@ -33,7 +33,7 @@ const ProductModal: React.FC<Props> = ({
             <p>
               Avaiable Sizes:{" "}
               {product.availableSizes.map((size) => (
-                <span key={size}>{size}</span>
+                <span key={size}>{size}{" "}</span>
               ))}
             </p>
             <h3>$ {formatCurrency(product.price)}</h3>

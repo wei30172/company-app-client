@@ -25,7 +25,7 @@ const ProductItem: React.FC<Props> = ({ product, addToCartRequest }) => {
   return (
     <div className="product-item">
       <img
-        src={require(`../../assets/products${product.image}`)}
+        src={require(`../../assets/products/${product.image}.jpg`)}
         alt={product.title}
         onClick={openModal}
       />
