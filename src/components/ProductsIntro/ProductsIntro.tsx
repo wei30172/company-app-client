@@ -66,7 +66,7 @@ const ProductsIntro = React.forwardRef<Ref, Props>((props, ref) => {
               type and scrambled it to make a type specimen book.{" "}
               <Link to={"/products"}>
                 <span className="products-intro_content_paragraph_more cursor-pointer">
-                  See More...
+                  Buy Now...
                 </span>
               </Link>
             </p>
