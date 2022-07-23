@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import Close from "@material-ui/icons/Close";
 import {
   ProductsList,
   Cart,
