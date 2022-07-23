@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PropsFromRedux, authConnector } from "../../store/auth/connector";
 import CloseIcon from "@material-ui/icons/Close";
@@ -20,12 +20,6 @@ const Navbar = ({
 }: Props) => {
   const navigate = useNavigate();
   const [showMobMenu, setShowMobMenu] = useState(false);
-  const [user, setUser] = useState<IAuth>();
-
-  useEffect(() => {
-    let auth = localStorage.getItem("auth") || "";
-    setUser(JSON.parse(auth) || {});
-  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("auth");
@@ -50,7 +44,6 @@ const Navbar = ({
       {/* menu */}
       <div className="navbar_menu">
         <ul>
-          {user && <li>Hi, {user.result.name}</li>}
           <li className="cursor-pointer" onClick={() => navigate("/")}>
             Home
           </li>
@@ -80,7 +73,6 @@ const Navbar = ({
 
       {/* mobile menu */}
       <ul className={!showMobMenu ? "navbar_hidden" : "navbar_mobile-menu"}>
-        {user && <li>Hi, {user.result.name}</li>}
         <li className="cursor-pointer" onClick={() => navigate("/")}>
           Home
         </li>
