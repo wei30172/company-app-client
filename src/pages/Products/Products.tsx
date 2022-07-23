@@ -21,18 +21,10 @@ const Products = () => {
 
   return (
     <div ref={inputRef} className="products">
-      <ProductsNavbar />
-      {showCart ? (
-        <Close
-          className="cart-button cursor-pointer"
-          onClick={handleSetShowCart}
-        />
-      ) : (
-        <ShoppingCartIcon
-          className="cart-button cursor-pointer"
-          onClick={handleSetShowCart}
-        />
-      )}
+      <ProductsNavbar
+        showCart={showCart}
+        handleSetShowCart={handleSetShowCart}
+      />
       <ScrollBtn handleScrollTop={handleScrollTop} />
 
       <div className="products_main">
