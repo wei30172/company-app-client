@@ -10,10 +10,10 @@ import {
 
 import { AuthActions } from "./types";
 
-const localToken = localStorage.getItem("user");
+const auth = localStorage.getItem("auth");
 
 const initialState: AuthState = {
-  token: localToken ? JSON.parse(localToken) : "",
+  token: auth ? JSON.parse(auth).token : "",
   isLoading: false,
   error: "",
 };

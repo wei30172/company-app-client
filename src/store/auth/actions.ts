@@ -9,12 +9,9 @@ import {
 } from "./actionTypes";
 
 import {
-  LoginPayload,
-  LoginSuccessPayload,
-  LoginFailurePayload,
-  SignupPayload,
-  SignupSuccessPayload,
-  SignupFailurePayload,
+  AuthPayload,
+  AuthSuccessPayload,
+  AuthFailurePayload,
   LoginRequest,
   LoginSuccess,
   LoginFailure,
@@ -24,36 +21,32 @@ import {
   LogoutRequest,
 } from "./types";
 
-export const loginRequest = (payload: LoginPayload): LoginRequest => ({
+export const loginRequest = (payload: AuthPayload): LoginRequest => ({
   type: LOGIN_REQUEST,
   payload,
 });
 
-export const loginSuccess = (payload: LoginSuccessPayload): LoginSuccess => ({
+export const loginSuccess = (payload: AuthSuccessPayload): LoginSuccess => ({
   type: LOGIN_SUCCESS,
   payload,
 });
 
-export const loginFailure = (payload: LoginFailurePayload): LoginFailure => ({
+export const loginFailure = (payload: AuthFailurePayload): LoginFailure => ({
   type: LOGIN_FAILURE,
   payload,
 });
 
-export const signupRequest = (payload: SignupPayload): SignupRequest => ({
+export const signupRequest = (payload: AuthPayload): SignupRequest => ({
   type: SIGNUP_REQUEST,
   payload,
 });
 
-export const signupSuccess = (
-  payload: SignupSuccessPayload,
-): SignupSuccess => ({
+export const signupSuccess = (payload: AuthSuccessPayload): SignupSuccess => ({
   type: SIGNUP_SUCCESS,
   payload,
 });
 
-export const signupFailure = (
-  payload: SignupFailurePayload,
-): SignupFailure => ({
+export const signupFailure = (payload: AuthFailurePayload): SignupFailure => ({
   type: SIGNUP_FAILURE,
   payload,
 });

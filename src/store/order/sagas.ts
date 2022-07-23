@@ -46,11 +46,14 @@ function* createOrderSaga(action: any) {
     ]);
   } catch (err: unknown) {
     if (err instanceof Error) {
-      yield put(
-        createOrderFailure({
-          error: err.message,
-        }),
-      );
+      yield all([
+        toast.error("Your order has NOT been placed."),
+        put(
+          createOrderFailure({
+            error: err.message,
+          }),
+        ),
+      ]);
     }
   }
 }

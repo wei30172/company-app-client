@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { PropsFromRedux, authConnector } from "../../store/auth/connector";
 import { FormInput } from "../../components";
-import { SignupPayloadValues } from "../../store/auth/types";
+import { AuthPayloadValues } from "../../store/auth/types";
 import "../Login/login.scss";
 
 const Signup = ({ token, signupRequest }: PropsFromRedux) => {
   const navigate = useNavigate();
-  const [userInputs, setUserInputs] = useState<SignupPayloadValues>({
+  const [userInputs, setUserInputs] = useState<AuthPayloadValues>({
     firstName: "",
     lastName: "",
     email: "",
@@ -77,13 +77,16 @@ const Signup = ({ token, signupRequest }: PropsFromRedux) => {
     },
   ];
 
-  const callback = (token: string) => {
-    console.log("signup Successfully!");
-    const user = {
-      user: token,
+  const callback = (res: IAuth) => {
+    const auth: IAuth = {
+      result: {
+        name: res.result.name,
+        email: res.result.email,
+      },
+      token: res.token,
     };
-    localStorage.setItem("user", JSON.stringify(user));
-    navigate("/");
+    localStorage.setItem("auth", JSON.stringify(auth));
+    // navigate("/");
   };
 
   const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
@@ -107,7 +110,7 @@ const Signup = ({ token, signupRequest }: PropsFromRedux) => {
               <FormInput
                 key={input.id}
                 {...input}
-                value={userInputs[input.name as keyof SignupPayloadValues]}
+                value={userInputs[input.name as keyof AuthPayloadValues]}
                 handleChange={handleChange}
               />
             </div>

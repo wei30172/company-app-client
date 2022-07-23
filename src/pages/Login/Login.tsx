@@ -2,14 +2,17 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { PropsFromRedux, authConnector } from "../../store/auth/connector";
 import { FormInput } from "../../components";
-import { LoginPayloadValues } from "../../store/auth/types";
+import { AuthPayloadValues } from "../../store/auth/types";
 import "./login.scss";
 
 const Login = ({ token, loginRequest }: PropsFromRedux) => {
   const navigate = useNavigate();
-  const [userInputs, setUserInputs] = useState<LoginPayloadValues>({
+  const [userInputs, setUserInputs] = useState<AuthPayloadValues>({
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
 
   useEffect(() => {
@@ -43,13 +46,16 @@ const Login = ({ token, loginRequest }: PropsFromRedux) => {
     },
   ];
 
-  const callback = (token: string) => {
-    console.log("login Successfully!");
-    const user = {
-      user: token,
+  const callback = (res: IAuth) => {
+    const auth: IAuth = {
+      result: {
+        name: res.result.name,
+        email: res.result.email,
+      },
+      token: res.token,
     };
-    localStorage.setItem("user", JSON.stringify(user));
-    navigate("/");
+    localStorage.setItem("auth", JSON.stringify(auth));
+    // navigate("/");
   };
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
@@ -74,7 +80,7 @@ const Login = ({ token, loginRequest }: PropsFromRedux) => {
               <FormInput
                 key={input.id}
                 {...input}
-                value={userInputs[input.name as keyof LoginPayloadValues]}
+                value={userInputs[input.name as keyof AuthPayloadValues]}
                 handleChange={handleChange}
               />
             </div>

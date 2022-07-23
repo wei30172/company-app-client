@@ -7,46 +7,52 @@ import {
   signupFailure,
 } from "./actions";
 import { LOGIN_REQUEST, SIGNUP_REQUEST } from "./actionTypes";
-import { SignupPayloadValues, LoginPayloadValues } from "./types";
+import { AuthPayloadValues } from "./types";
+import { toast } from "react-hot-toast";
 
 const HttpClient = axios.create({
   baseURL: "https://posts-node-server.herokuapp.com",
 });
 
 const userLogin = async (payload: {
-  values: LoginPayloadValues;
+  values: AuthPayloadValues;
   callback: () => void;
 }) => {
-  const { data } = await HttpClient.post<IAuth>("/user/login", payload.values);
+  const { data } = await HttpClient.post("/user/login", payload.values);
   return data;
 };
 
 const userSignup = async (payload: {
-  values: SignupPayloadValues;
+  values: AuthPayloadValues;
   callback: () => void;
 }) => {
-  const { data } = await HttpClient.post<IAuth>("/user/signup", payload.values);
+  const { data } = await HttpClient.post("/user/signup", payload.values);
   return data;
 };
 
 function* loginSaga(action: any) {
   try {
     const res: IAuth = yield call(userLogin, action.payload);
+    yield all([
+      toast.success("Login Successfully!"),
+      put(
+        loginSuccess({
+          token: res.token,
+        }),
+      ),
+    ]);
 
-    yield put(
-      loginSuccess({
-        token: res.token,
-      }),
-    );
-
-    action.payload.callback(res.token);
+    action.payload.callback(res);
   } catch (err: unknown) {
     if (err instanceof Error) {
-      yield put(
-        loginFailure({
-          error: err.message,
-        }),
-      );
+      yield all([
+        toast.error("Login Failure."),
+        put(
+          loginFailure({
+            error: err.message,
+          }),
+        ),
+      ]);
     }
   }
 }
@@ -55,20 +61,24 @@ function* signupSaga(action: any) {
   try {
     const res: IAuth = yield call(userSignup, action.payload);
 
-    yield put(
-      signupSuccess({
-        token: res.token,
-      }),
-    );
+    yield all([
+      toast.success("Signup Successfully!"),
+      put(
+        signupSuccess({
+          token: res.token,
+        }),
+      ),
+    ]);
 
-    action.payload.callback(res.token);
+    action.payload.callback(res);
   } catch (err: unknown) {
     if (err instanceof Error) {
-      yield put(
+      yield all([
+        toast.error("Signup Failure."),
         signupFailure({
           error: err.message,
         }),
-      );
+      ]);
     }
   }
 }

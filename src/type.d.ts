@@ -5,7 +5,13 @@ interface AuthState {
   error: string;
 }
 
+interface IUser {
+  name: string;
+  email: string;
+}
+
 interface IAuth {
+  result: IUser;
   token: string;
 }
 
