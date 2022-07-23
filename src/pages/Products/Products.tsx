@@ -17,9 +17,9 @@ const Products = () => {
   return (
     <div ref={inputRef} className="products">
       {showCart ? (
-        <Close className="cart-button" onClick={handleSetShowCart} />
+        <Close className="cart-button cursor-pointer" onClick={handleSetShowCart} />
       ) : (
-        <ShoppingCartIcon className="cart-button" onClick={handleSetShowCart} />
+        <ShoppingCartIcon className="cart-button cursor-pointer" onClick={handleSetShowCart} />
       )}
       <div className="main">
         <ProductsList />

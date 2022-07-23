@@ -62,29 +62,27 @@ const About = React.forwardRef<Ref, Props>((props, ref) => {
       <div className="about_container">
         <div className="about_content">
           <div>
+            <img
+              className="about_content_image shadow-lg"
+              src={require(`../../assets/about/${imageContent.imageName}`)}
+              alt="about"
+            />
+            <p className="about_content_image-description">
+              {imageContent.title}
+            </p>
+          </div>
+          <div>
+            <p className="about_content_title">About Us</p>
             <p className="about_content_paragraph">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book.
             </p>
-            <p className="about_content_paragraph">
-              It has survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
-            </p>
-          </div>
-          <div>
-            <img
-              className="about_content_image shadow-lg"
-              src={require(`../../assets/carousel/${imageContent.imageName}`)}
-              alt="carousel"
-            />
-            <p className="about_content_image-description">
-              {imageContent.title}
-            </p>
           </div>
         </div>
         <Carousel
+          section="about"
           carouselItems={carouselItems}
           setImageContent={setImageContent}
         />

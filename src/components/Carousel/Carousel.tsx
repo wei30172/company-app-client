@@ -11,11 +11,16 @@ export type CarouselItemType = {
 };
 
 type Props = {
+  section: string;
   carouselItems: CarouselItemType[];
   setImageContent: React.Dispatch<React.SetStateAction<CarouselItemType>>;
 };
 
-const Carousel: React.FC<Props> = ({ carouselItems, setImageContent }) => {
+const Carousel: React.FC<Props> = ({
+  section,
+  carouselItems,
+  setImageContent,
+}) => {
   const maxScrollWidth = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const carousel = useRef<HTMLDivElement>(null);
@@ -82,6 +87,7 @@ const Carousel: React.FC<Props> = ({ carouselItems, setImageContent }) => {
           {carouselItems.map((item) => {
             return (
               <Card
+                section={section}
                 key={item.idx}
                 item={item}
                 setImageContent={setImageContent}

@@ -9,16 +9,14 @@ type Ref = HTMLDivElement;
 
 type Props = {
   mainRefs: {
+    productsRef: RefObject<HTMLDivElement>;
     aboutRef: RefObject<HTMLDivElement>;
-    valuesRef: RefObject<HTMLDivElement>;
-    teamRef: RefObject<HTMLDivElement>;
-    jobsRef: RefObject<HTMLDivElement>;
     missionRef: RefObject<HTMLDivElement>;
   };
 };
 
 const Navbar = React.forwardRef<Ref, Props>((props, ref) => {
-  const { aboutRef, valuesRef, teamRef, jobsRef, missionRef } = props.mainRefs;
+  const { aboutRef, missionRef, productsRef } = props.mainRefs;
 
   const [showMobMenu, setShowMobMenu] = useState(false);
 
@@ -41,33 +39,21 @@ const Navbar = React.forwardRef<Ref, Props>((props, ref) => {
         <ul>
           <li
             className="cursor-pointer"
+            onClick={() => scrollToSection(productsRef)}
+          >
+            Our Products
+          </li>
+          <li
+            className="cursor-pointer"
             onClick={() => scrollToSection(aboutRef)}
           >
-            About
-          </li>
-          <li
-            className="cursor-pointer"
-            onClick={() => scrollToSection(valuesRef)}
-          >
-            Values
-          </li>
-          <li
-            className="cursor-pointer"
-            onClick={() => scrollToSection(teamRef)}
-          >
-            Team
-          </li>
-          <li
-            className="cursor-pointer"
-            onClick={() => scrollToSection(jobsRef)}
-          >
-            Jobs
+            About Us
           </li>
           <li
             className="cursor-pointer"
             onClick={() => scrollToSection(missionRef)}
           >
-            Mission
+            Our Mission
           </li>
         </ul>
       </div>
@@ -82,11 +68,9 @@ const Navbar = React.forwardRef<Ref, Props>((props, ref) => {
 
       {/* mobile menu */}
       <ul className={!showMobMenu ? "navbar_hidden" : "navbar_mobile-menu"}>
-        <li onClick={() => handleClick(aboutRef)}>About</li>
-        <li onClick={() => handleClick(valuesRef)}>Values</li>
-        <li onClick={() => handleClick(teamRef)}>Team</li>
-        <li onClick={() => handleClick(jobsRef)}>Jobs</li>
-        <li onClick={() => handleClick(missionRef)}>Mission</li>
+        <li onClick={() => handleClick(productsRef)}>Our Products</li>
+        <li onClick={() => handleClick(aboutRef)}>About Us</li>
+        <li onClick={() => handleClick(missionRef)}>Our Mission</li>
       </ul>
     </div>
   );

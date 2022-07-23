@@ -33,7 +33,7 @@ const ProductModal: React.FC<Props> = ({
             <p>
               Avaiable Sizes:{" "}
               {product.availableSizes.map((size) => (
-                <span key={size}>{size}{" "}</span>
+                <span key={size}>{size} </span>
               ))}
             </p>
             <h3>$ {formatCurrency(product.price)}</h3>
