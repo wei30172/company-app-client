@@ -1,6 +1,6 @@
 ## Company website
 
-A Company website template, built with React.
+A Company website template, built with React, TypeScript, and Sass.
 
 ## Project Screenshots
 
