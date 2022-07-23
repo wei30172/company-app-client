@@ -14,16 +14,10 @@ const Navbar = () => {
       {/* menu */}
       <div className="navbar_menu">
         <ul>
-          <li
-            className="cursor-pointer"
-            onClick={() => navigate("/")}
-          >
+          <li className="cursor-pointer" onClick={() => navigate("/")}>
             Home
           </li>
-          <li
-            className="cursor-pointer"
-            onClick={() => navigate("/login")}
-          >
+          <li className="cursor-pointer" onClick={() => navigate("/login")}>
             Login
           </li>
         </ul>

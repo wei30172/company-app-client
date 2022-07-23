@@ -8,8 +8,8 @@ import "./styles/_base.scss";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#ff6363",
-      dark: "#b24545",
+      main: "#7CB074",
+      dark: "#567b51",
     },
     secondary: {
       main: "#f0c040",

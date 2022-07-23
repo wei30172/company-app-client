@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Close from "@material-ui/icons/Close";
-import { ProductsList, Cart, ScrollBtn, ProductsNavbar } from "../../components";
+import {
+  ProductsList,
+  Cart,
+  ScrollBtn,
+  ProductsNavbar,
+} from "../../components";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import "./Products.scss";
 
@@ -29,7 +34,7 @@ const Products = () => {
         />
       )}
       <ScrollBtn handleScrollTop={handleScrollTop} />
-      
+
       <div className="products_main">
         <div className="main">
           <ProductsList />

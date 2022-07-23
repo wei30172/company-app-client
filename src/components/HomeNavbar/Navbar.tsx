@@ -40,10 +40,7 @@ const Navbar = React.forwardRef<Ref, Props>((props, ref) => {
       {/* menu */}
       <div className="navbar_menu">
         <ul>
-          <li
-            className="cursor-pointer"
-            onClick={() => navigate("/products")}
-          >
+          <li className="cursor-pointer" onClick={() => navigate("/products")}>
             Buy Now
           </li>
           <li
