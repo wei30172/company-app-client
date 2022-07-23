@@ -8,10 +8,17 @@ import { rootSaga } from "./rootSaga";
 // Create the saga middleware
 const sagaMiddleware = createSagaMiddleware();
 
+let middleware;
+
+middleware =
+  process.env.NODE_ENV === "development"
+    ? new MiddlewareArray().concat(sagaMiddleware, logger)
+    : new MiddlewareArray().concat(sagaMiddleware);
+
 // Mount it on the Store
 const store = configureStore({
   reducer: rootReducer,
-  middleware: new MiddlewareArray().concat(sagaMiddleware, logger),
+  middleware: middleware,
 });
 
 // Run the saga
