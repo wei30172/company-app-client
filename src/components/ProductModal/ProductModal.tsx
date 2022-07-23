@@ -21,7 +21,10 @@ const ProductModal: React.FC<Props> = ({
   return (
     <Modal className="product-modal" open={true} onClose={closeModal}>
       <>
-        <CloseIcon className="close-button cursor-pointer" onClick={closeModal} />
+        <CloseIcon
+          className="close-button cursor-pointer"
+          onClick={closeModal}
+        />
         <div className="product-details">
           <img
             src={require(`../../assets/products/${product.image}.jpg`)}
