@@ -47,7 +47,7 @@ const ProductModal: React.FC<Props> = ({
                 closeModal();
               }}
             >
-              Add To Cart
+              Add to Cart
             </button>
           </div>
         </div>
