@@ -11,12 +11,12 @@ import { CLEAR_CART_REQUEST } from "../cart/actionTypes";
 import { toast } from "react-hot-toast";
 
 const HttpClient = axios.create({
-  baseURL: "https://company-app-server.herokuapp.com/api",
+  baseURL: "https://company-app-server.herokuapp.com",
 });
 
 const createOrder = async (payload: { order: IOrder }) => {
   const { email, name, address, total, cartItems } = payload.order;
-  const { data } = await HttpClient.post<IOrder>("/orders", {
+  const { data } = await HttpClient.post<IOrder>("/api/orders", {
     email,
     name,
     address,
@@ -27,7 +27,7 @@ const createOrder = async (payload: { order: IOrder }) => {
 };
 
 const fetchOrders = async () => {
-  const { data } = await HttpClient.get<IOrder[]>("/orders");
+  const { data } = await HttpClient.get<IOrder[]>("/api/orders");
   return data;
 };
 
