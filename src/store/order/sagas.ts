@@ -11,7 +11,7 @@ import { CLEAR_CART_REQUEST } from "../cart/actionTypes";
 import { toast } from "react-hot-toast";
 
 const HttpClient = axios.create({
-  baseURL: "https://company-app-server.herokuapp.com",
+  baseURL: "https://shoppingcart-node-server.herokuapp.com",
 });
 
 const createOrder = async (payload: { order: IOrder }) => {
