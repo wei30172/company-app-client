@@ -1,10 +1,10 @@
-import { HttpClient } from "../../api/shoppingAPI";
+import { api } from "../../api/shoppingAPI";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import { fetchProductsSuccess, fetchProductsFailure } from "./actions";
 import { FECTCH_PRODUCTS_REQUEST } from "./actionTypes";
 
 const fetchProducts = async () => {
-  const { data } = await HttpClient.get<IProduct[]>("/api/products");
+  const { data } = await api.get<IProduct[]>("/api/products");
   return data;
 };
 

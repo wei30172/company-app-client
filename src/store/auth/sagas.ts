@@ -1,4 +1,4 @@
-import { HttpClient } from "../../api/authAPI";
+import { api } from "../../api/authAPI";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import {
   loginSuccess,
@@ -14,7 +14,7 @@ const userLogin = async (payload: {
   values: AuthPayloadValues;
   callback: () => void;
 }) => {
-  const { data } = await HttpClient.post("/user/login", payload.values);
+  const { data } = await api.post("/user/login", payload.values);
   return data;
 };
 
@@ -22,7 +22,7 @@ const userSignup = async (payload: {
   values: AuthPayloadValues;
   callback: () => void;
 }) => {
-  const { data } = await HttpClient.post("/user/signup", payload.values);
+  const { data } = await api.post("/user/signup", payload.values);
   return data;
 };
 

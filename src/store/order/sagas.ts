@@ -1,4 +1,4 @@
-import { HttpClient } from "../../api/shoppingAPI";
+import { api } from "../../api/shoppingAPI";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import {
   createOrderSuccess,
@@ -12,7 +12,7 @@ import { toast } from "react-hot-toast";
 
 const createOrder = async (payload: { order: IOrder }) => {
   const { email, name, address, total, cartItems } = payload.order;
-  const { data } = await HttpClient.post<IOrder>("/api/orders", {
+  const { data } = await api.post<IOrder>("/api/orders", {
     email,
     name,
     address,
@@ -23,7 +23,7 @@ const createOrder = async (payload: { order: IOrder }) => {
 };
 
 const fetchOrders = async () => {
-  const { data } = await HttpClient.get<IOrder[]>("/api/orders");
+  const { data } = await api.get<IOrder[]>("/api/orders");
   return data;
 };
 
