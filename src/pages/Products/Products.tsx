@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import {
+  ProductsNavbar,
+  Filter,
   ProductsList,
   Cart,
   ScrollBtn,
-  ProductsNavbar,
 } from "../../components";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import "./Products.scss";
@@ -27,6 +28,7 @@ const Products = () => {
 
       <div className="products_main">
         <div className="main">
+          <Filter />
           <ProductsList />
         </div>
         {showCart && (

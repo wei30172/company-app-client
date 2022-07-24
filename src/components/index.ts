@@ -9,5 +9,6 @@ export { default as ScrollBtn } from "./ScrollBtn/ScrollBtn";
 
 // Products
 export { default as ProductsNavbar } from "./ProductsNavbar/Navbar";
+export { default as Filter } from "./Filter/Filter";
 export { default as ProductsList } from "./ProductsList/ProductsList";
 export { default as Cart } from "./Cart/Cart";

@@ -1,5 +1,9 @@
 import { connect, ConnectedProps } from "react-redux";
-import { fetchProductsRequest } from "./actions";
+import {
+  fetchProductsRequest,
+  filterProductsRequest,
+  sortProductsRequest,
+} from "./actions";
 import { addToCartRequest } from "../cart/actions";
 
 interface StateProps {
@@ -7,12 +11,15 @@ interface StateProps {
 }
 const mapState = (state: StateProps) => ({
   products: state.product.products,
+  filteredProducts: state.product.filteredProducts,
   isLoading: state.product.isLoading,
   error: state.product.error,
 });
 
 const mapDispatch = {
   fetchProductsRequest,
+  filterProductsRequest,
+  sortProductsRequest,
   addToCartRequest,
 };
 

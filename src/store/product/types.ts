@@ -2,8 +2,8 @@ import {
   FECTCH_PRODUCTS_REQUEST,
   FECTCH_PRODUCTS_SUCCESS,
   FECTCH_PRODUCTS_FAILURE,
-  FILTER_PRODUCTS_BY_SIZE,
-  ORDER_PRODUCTS_BY_PRICE,
+  FILTER_PRODUCTS_REQUEST,
+  ORDER_PRODUCTS_REQUEST,
 } from "./actionTypes";
 
 export interface FilterProductsSuccessPayload {
@@ -29,22 +29,20 @@ export interface FetchProductsFailure {
 }
 
 export interface FilterProductsPayload {
-  size: string;
-  products: IProduct[];
+  filter: string;
 }
 
 export interface OrderProductsPayload {
-  sort: string;
-  products: IProduct[];
+  order: string;
 }
 
-export interface FilterProducts {
-  type: typeof FILTER_PRODUCTS_BY_SIZE;
+export interface FilterProductsRequest {
+  type: typeof FILTER_PRODUCTS_REQUEST;
   payload: FilterProductsPayload;
 }
 
-export interface OrderProducts {
-  type: typeof ORDER_PRODUCTS_BY_PRICE;
+export interface OrderProductsRequest {
+  type: typeof ORDER_PRODUCTS_REQUEST;
   payload: OrderProductsPayload;
 }
 
@@ -52,5 +50,5 @@ export type ProductActions =
   | FetchProductsRequest
   | FetchProductsSuccess
   | FetchProductsFailure
-  | FilterProducts
-  | OrderProducts;
+  | FilterProductsRequest
+  | OrderProductsRequest;

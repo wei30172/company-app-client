@@ -2,8 +2,8 @@ import {
   FECTCH_PRODUCTS_REQUEST,
   FECTCH_PRODUCTS_SUCCESS,
   FECTCH_PRODUCTS_FAILURE,
-  FILTER_PRODUCTS_BY_SIZE,
-  ORDER_PRODUCTS_BY_PRICE,
+  FILTER_PRODUCTS_REQUEST,
+  ORDER_PRODUCTS_REQUEST,
 } from "./actionTypes";
 
 import {
@@ -14,8 +14,8 @@ import {
   FetchProductsRequest,
   FetchProductsSuccess,
   FetchProductsFailure,
-  FilterProducts,
-  OrderProducts,
+  FilterProductsRequest,
+  OrderProductsRequest,
 } from "./types";
 
 export const fetchProductsRequest = (): FetchProductsRequest => ({
@@ -36,14 +36,16 @@ export const fetchProductsFailure = (
   payload,
 });
 
-export const filterProducts = (
+export const filterProductsRequest = (
   payload: FilterProductsPayload,
-): FilterProducts => ({
-  type: FILTER_PRODUCTS_BY_SIZE,
+): FilterProductsRequest => ({
+  type: FILTER_PRODUCTS_REQUEST,
   payload,
 });
 
-export const sortProducts = (payload: OrderProductsPayload): OrderProducts => ({
-  type: ORDER_PRODUCTS_BY_PRICE,
+export const sortProductsRequest = (
+  payload: OrderProductsPayload,
+): OrderProductsRequest => ({
+  type: ORDER_PRODUCTS_REQUEST,
   payload,
 });

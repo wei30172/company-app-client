@@ -9,7 +9,7 @@ import HourglassEmptyIcon from "@material-ui/icons/HourglassEmpty";
 import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
 
 const ProductsList = ({
-  products,
+  filteredProducts,
   isLoading,
   error,
   fetchProductsRequest,
@@ -28,9 +28,9 @@ const ProductsList = ({
       <ErrorOutlineIcon />
     </div>
   ) : (
-    products && (
+    filteredProducts && (
       <div className="products-list">
-        {products.map((product: IProduct) => (
+        {filteredProducts.map((product: IProduct) => (
           <div key={product._id}>
             <ProductItem
               product={product}

@@ -1,0 +1,37 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 0.1rem #c0c0c0 solid;
+  .filter_result {
+    display: flex;
+    align-items: center;
+  }
+  .filter_selects {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    div {
+      flex: 1;
+    }
+  }
+  select {
+    padding: .5rem;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+  }
+}
+
+@media (min-width: 768px) { 
+  .filter {
+    display: flex;
+    flex-direction: row;
+    div {
+      flex: 1;
+    }
+  }
+}
