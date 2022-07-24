@@ -5,7 +5,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import MenuIcon from "@material-ui/icons/Menu";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Close from "@material-ui/icons/Close";
-import "./navbar.scss";
+import "./Navbar.scss";
 
 interface Props extends PropsFromRedux {
   showCart: boolean;

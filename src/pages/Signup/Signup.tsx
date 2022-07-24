@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { PropsFromRedux, authConnector } from "../../store/auth/connector";
 import { FormInput } from "../../components";
 import { AuthPayloadValues } from "../../store/auth/types";
-import "../Login/login.scss";
+import HomeRounded from "@material-ui/icons/HomeRounded";
+import LocalMallRoundedIcon from "@material-ui/icons/LocalMallRounded";
+import "../Login/Login.scss";
 
 const Signup = ({ token, signupRequest }: PropsFromRedux) => {
   const navigate = useNavigate();
@@ -101,6 +103,14 @@ const Signup = ({ token, signupRequest }: PropsFromRedux) => {
 
   return (
     <div className="signup">
+      <div className="icons">
+        <Link to={"/"}>
+          <HomeRounded />
+        </Link>
+        <Link to={"/products"}>
+          <LocalMallRoundedIcon />
+        </Link>
+      </div>
       <form onSubmit={handleSignup}>
         <div className="form">
           <h2>Signup</h2>

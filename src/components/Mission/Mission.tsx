@@ -1,6 +1,6 @@
 import React from "react";
 import missionImg from "../../assets/mission.png";
-import "./mission.scss";
+import "./Mission.scss";
 
 type Ref = HTMLDivElement;
 type Props = {};

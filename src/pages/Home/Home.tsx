@@ -8,7 +8,7 @@ import {
   Footer,
 } from "../../components";
 
-import "./home.scss";
+import "./Home.scss";
 
 const Home = () => {
   // create references

@@ -4,7 +4,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "../../assets/logo.png";
 import { scrollToSection } from "../../utils/scrollToSection";
-import "./navbar.scss";
+import "./Navbar.scss";
 
 type Ref = HTMLDivElement;
 
