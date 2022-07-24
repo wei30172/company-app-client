@@ -20,6 +20,9 @@
     background-color: #f0c040;
     color: #333;
     margin-right: .5rem;
+    &:hover {
+      color: #567b51;
+    }
   }
   .count {
     margin: 0 10px
