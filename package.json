@@ -1,6 +1,5 @@
 {
   "name": "company-app-client",
-  "proxy": "https://shoppingcart-node-server.herokuapp.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
