@@ -1,10 +1,14 @@
+import axios from "axios";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import { fetchProductsSuccess, fetchProductsFailure } from "./actions";
 import { FECTCH_PRODUCTS_REQUEST } from "./actionTypes";
-import ProductsApi from "../../api/productsApi";
+
+const HttpClient = axios.create({
+  baseURL: "https://shoppingcart-node-server.herokuapp.com",
+});
 
 const fetchProducts = async () => {
-  const { data } = await ProductsApi.get<IProduct[]>("/");
+  const { data } = await HttpClient.get<IProduct[]>("/api/products");
   return data;
 };
 
