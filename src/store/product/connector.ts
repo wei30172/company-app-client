@@ -3,6 +3,7 @@ import {
   fetchProductsRequest,
   filterProductsRequest,
   sortProductsRequest,
+  searchProductsRequest,
 } from "./actions";
 import { addToCartRequest } from "../cart/actions";
 
@@ -21,6 +22,7 @@ const mapDispatch = {
   filterProductsRequest,
   sortProductsRequest,
   addToCartRequest,
+  searchProductsRequest,
 };
 
 export const productsConnector = connect(mapState, mapDispatch);

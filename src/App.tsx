@@ -24,10 +24,10 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "Quicksand",
+    fontSize: 16,
     fontWeightBold: 700,
     fontWeightMedium: 500,
     fontWeightRegular: 300,
-    htmlFontSize: 8,
   },
 });
 

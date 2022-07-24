@@ -4,6 +4,7 @@ import {
   FECTCH_PRODUCTS_FAILURE,
   FILTER_PRODUCTS_REQUEST,
   ORDER_PRODUCTS_REQUEST,
+  SEARCH_PRODUCTS_REQUEST,
 } from "./actionTypes";
 
 export interface FilterProductsSuccessPayload {
@@ -36,6 +37,10 @@ export interface OrderProductsPayload {
   order: string;
 }
 
+export interface SearchProductsPayload {
+  search: string;
+}
+
 export interface FilterProductsRequest {
   type: typeof FILTER_PRODUCTS_REQUEST;
   payload: FilterProductsPayload;
@@ -46,9 +51,15 @@ export interface OrderProductsRequest {
   payload: OrderProductsPayload;
 }
 
+export interface SearchProductsRequest {
+  type: typeof SEARCH_PRODUCTS_REQUEST;
+  payload: SearchProductsPayload;
+}
+
 export type ProductActions =
   | FetchProductsRequest
   | FetchProductsSuccess
   | FetchProductsFailure
   | FilterProductsRequest
-  | OrderProductsRequest;
+  | OrderProductsRequest
+  | SearchProductsRequest;

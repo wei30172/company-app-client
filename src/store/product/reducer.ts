@@ -4,6 +4,7 @@ import {
   FECTCH_PRODUCTS_FAILURE,
   FILTER_PRODUCTS_REQUEST,
   ORDER_PRODUCTS_REQUEST,
+  SEARCH_PRODUCTS_REQUEST,
 } from "./actionTypes";
 
 import { ProductActions } from "./types";
@@ -69,9 +70,9 @@ const productReducer = (state = initialState, action: ProductActions) => {
     case FILTER_PRODUCTS_REQUEST:
       let filteredProducts: IProduct[] = [...state.products];
       const filter = action.payload.filter;
-      
+
       filteredProducts =
-        filter === "defualt"
+        filter === ""
           ? filteredProducts
           : filteredProducts.filter(
               (product) => product.availableSizes.indexOf(filter) >= 0,
@@ -81,6 +82,16 @@ const productReducer = (state = initialState, action: ProductActions) => {
         filteredProducts: filteredProducts,
       };
 
+    case SEARCH_PRODUCTS_REQUEST:
+      let searchedProducts: IProduct[] = [...state.products];
+      const search = action.payload.search;
+      searchedProducts = searchedProducts.filter((product: IProduct) =>
+        product.title.includes(search),
+      );
+      return {
+        ...state,
+        filteredProducts: searchedProducts,
+      };
     default:
       return state;
   }
