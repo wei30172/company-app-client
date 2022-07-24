@@ -1,4 +1,4 @@
-import axios from "axios";
+import { HttpClient } from "../../api/authAPI";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import {
   loginSuccess,
@@ -9,10 +9,6 @@ import {
 import { LOGIN_REQUEST, SIGNUP_REQUEST } from "./actionTypes";
 import { AuthPayloadValues } from "./types";
 import { toast } from "react-hot-toast";
-
-const HttpClient = axios.create({
-  baseURL: "https://posts-node-server.herokuapp.com",
-});
 
 const userLogin = async (payload: {
   values: AuthPayloadValues;

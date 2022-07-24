@@ -1,4 +1,4 @@
-import axios from "axios";
+import { HttpClient } from "../../api/shoppingAPI";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import {
   createOrderSuccess,
@@ -9,10 +9,6 @@ import {
 import { CREATE_ORDER_REQUEST, FETCH_ORDERS_REQUEST } from "./actionTypes";
 import { CLEAR_CART_REQUEST } from "../cart/actionTypes";
 import { toast } from "react-hot-toast";
-
-const HttpClient = axios.create({
-  baseURL: "https://shoppingcart-node-server.herokuapp.com",
-});
 
 const createOrder = async (payload: { order: IOrder }) => {
   const { email, name, address, total, cartItems } = payload.order;
