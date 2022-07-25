@@ -41,13 +41,13 @@ const Navbar = React.forwardRef<Ref, Props>((props, ref) => {
       <div className="navbar_menu">
         <ul>
           <li className="cursor-pointer" onClick={() => navigate("/products")}>
-            Buy Now
+            Our Products
           </li>
           <li
             className="cursor-pointer"
             onClick={() => scrollToSection(productsRef)}
           >
-            Our Products
+            About Products
           </li>
           <li
             className="cursor-pointer"
@@ -79,10 +79,10 @@ const Navbar = React.forwardRef<Ref, Props>((props, ref) => {
       {/* mobile menu */}
       <ul className={!showMobMenu ? "navbar_hidden" : "navbar_mobile-menu"}>
         <li className="cursor-pointer" onClick={() => navigate("/products")}>
-          Buy Now
+          Our Products
         </li>
         <li className="cursor-pointer" onClick={() => handleClick(productsRef)}>
-          Our Products
+          About Products
         </li>
         <li className="cursor-pointer" onClick={() => handleClick(aboutRef)}>
           About Us

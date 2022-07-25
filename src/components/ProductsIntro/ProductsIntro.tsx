@@ -58,7 +58,7 @@ const ProductsIntro = React.forwardRef<Ref, Props>((props, ref) => {
       <div className="products-intro_container">
         <div className="products-intro_content">
           <div>
-            <p className="products-intro_content_title">Our Products</p>
+            <p className="products-intro_content_title">About Products</p>
             <p className="products-intro_content_paragraph">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -66,7 +66,7 @@ const ProductsIntro = React.forwardRef<Ref, Props>((props, ref) => {
               type and scrambled it to make a type specimen book.{" "}
               <Link to={"/products"}>
                 <span className="products-intro_content_paragraph_more cursor-pointer">
-                  Buy Now...
+                  Our Products...
                 </span>
               </Link>
             </p>

@@ -47,7 +47,7 @@ const carouselItems: CarouselItemType[] = [
   },
   {
     idx: 9,
-    title: "Our Products",
+    title: "About Products",
     imageName: "carousel9.png",
   },
 ];

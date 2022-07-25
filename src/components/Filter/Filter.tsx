@@ -65,6 +65,7 @@ const Filter = ({
   const handleFilterChange = (e: React.ChangeEvent<{ value: unknown }>) => {
     const target = e.target as HTMLInputElement;
     setOrder("");
+    setSearch("");
     setFilter(target.value);
     handleFilterProducts();
   };

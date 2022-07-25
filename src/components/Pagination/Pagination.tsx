@@ -52,7 +52,7 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
   };
 
   return (
-    <>
+    <div>
       <IconButton
         onClick={handleFirstPageButtonClick}
         disabled={page === 0}
@@ -89,7 +89,7 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
       >
         {theme.direction === "rtl" ? <FirstPageIcon /> : <LastPageIcon />}
       </IconButton>
-    </>
+    </div>
   );
 }
 
