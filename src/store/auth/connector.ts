@@ -3,11 +3,13 @@ import { loginRequest, signupRequest, logoutRequest } from "./actions";
 
 interface StateProps {
   auth: AuthState;
+  cart: CartState;
 }
 const mapState = (state: StateProps) => ({
   token: state.auth.token,
   isLoading: state.auth.isLoading,
   error: state.auth.error,
+  cartItems: state.cart.cartItems,
 });
 
 const mapDispatch = {

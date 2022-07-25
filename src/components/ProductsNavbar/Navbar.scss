@@ -13,8 +13,22 @@
     color: #333;
     position: absolute;
     z-index: 99;
+    top: 2rem;
+    right: 2rem;
+  }
+  .cart-count {
+    position: absolute;
+    z-index: 99;
     top: 1rem;
     right: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #567b51;
+    color: white; 
+    border-radius: 50%;  
   }
   .navbar_menu {
     display: none;

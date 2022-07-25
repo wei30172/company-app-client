@@ -36,7 +36,7 @@ const Cart: React.FC<Props> = ({
         <div className="cart_header">Cart is empty</div>
       ) : (
         <div className="cart_header">
-          You have {cartItems.length} in the cart
+          You have {cartItems.length} products in the cart
         </div>
       )}
 

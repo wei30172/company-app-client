@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { PropsFromRedux, authConnector } from "../../store/auth/connector";
 import CloseIcon from "@material-ui/icons/Close";
@@ -13,6 +13,7 @@ interface Props extends PropsFromRedux {
 }
 
 const Navbar = ({
+  cartItems,
   token,
   logoutRequest,
   showCart,
@@ -20,6 +21,15 @@ const Navbar = ({
 }: Props) => {
   const navigate = useNavigate();
   const [showMobMenu, setShowMobMenu] = useState(false);
+  const [cartItemsCount, setCartItemsCount] = useState(0);
+
+  useEffect(() => {
+    if (cartItems.length > 0) {
+      setCartItemsCount(
+        cartItems.reduce((total, item) => total + item.count, 0),
+      );
+    }
+  }, [cartItems]);
 
   const handleLogout = () => {
     localStorage.removeItem("auth");
@@ -29,17 +39,22 @@ const Navbar = ({
   return (
     <div className="products-navbar">
       {/* cart */}
-      {showCart ? (
-        <Close
-          className="cart-button cursor-pointer"
-          onClick={handleSetShowCart}
-        />
-      ) : (
-        <ShoppingCartIcon
-          className="cart-button cursor-pointer"
-          onClick={handleSetShowCart}
-        />
-      )}
+      <>
+        {showCart ? (
+          <Close
+            className="cart-button cursor-pointer"
+            onClick={handleSetShowCart}
+          />
+        ) : (
+          <>
+            <ShoppingCartIcon
+              className="cart-button cursor-pointer"
+              onClick={handleSetShowCart}
+            />
+            <div className="cart-count cursor-pointer">{cartItemsCount}</div>
+          </>
+        )}
+      </>
 
       {/* menu */}
       <div className="navbar_menu">
