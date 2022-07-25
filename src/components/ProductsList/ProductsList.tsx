@@ -3,13 +3,13 @@ import {
   PropsFromRedux,
   productsConnector,
 } from "../../store/product/connector";
-import ProductItem from "../ProductItem/ProductItem";
+import { ProductItem } from "../index";
 import "./ProductsList.scss";
 import HourglassEmptyIcon from "@material-ui/icons/HourglassEmpty";
 import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
 
 const ProductsList = ({
-  filteredProducts,
+  paginatedProducts,
   isLoading,
   error,
   fetchProductsRequest,
@@ -28,9 +28,9 @@ const ProductsList = ({
       <ErrorOutlineIcon />
     </div>
   ) : (
-    filteredProducts && (
+    paginatedProducts && (
       <div className="products-list">
-        {filteredProducts.map((product: IProduct) => (
+        {paginatedProducts.map((product: IProduct) => (
           <div key={product._id}>
             <ProductItem
               product={product}

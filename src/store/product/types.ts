@@ -5,13 +5,14 @@ import {
   FILTER_PRODUCTS_REQUEST,
   ORDER_PRODUCTS_REQUEST,
   SEARCH_PRODUCTS_REQUEST,
+  PAGINATE_PRODUCTS_REQUEST,
 } from "./actionTypes";
 
-export interface FilterProductsSuccessPayload {
+export interface FetchProductsSuccessPayload {
   products: IProduct[];
 }
 
-export interface FilterProductsFailurePayload {
+export interface FetchProductsFailurePayload {
   error: string;
 }
 
@@ -21,12 +22,12 @@ export interface FetchProductsRequest {
 
 export interface FetchProductsSuccess {
   type: typeof FECTCH_PRODUCTS_SUCCESS;
-  payload: FilterProductsSuccessPayload;
+  payload: FetchProductsSuccessPayload;
 }
 
 export interface FetchProductsFailure {
   type: typeof FECTCH_PRODUCTS_FAILURE;
-  payload: FilterProductsFailurePayload;
+  payload: FetchProductsFailurePayload;
 }
 
 export interface FilterProductsPayload {
@@ -39,6 +40,10 @@ export interface OrderProductsPayload {
 
 export interface SearchProductsPayload {
   search: string;
+}
+
+export interface PaginateProductsPayload {
+  paginatedProducts: IProduct[];
 }
 
 export interface FilterProductsRequest {
@@ -56,10 +61,16 @@ export interface SearchProductsRequest {
   payload: SearchProductsPayload;
 }
 
+export interface PaginateProductsRequest {
+  type: typeof PAGINATE_PRODUCTS_REQUEST;
+  payload: PaginateProductsPayload;
+}
+
 export type ProductActions =
   | FetchProductsRequest
   | FetchProductsSuccess
   | FetchProductsFailure
   | FilterProductsRequest
   | OrderProductsRequest
-  | SearchProductsRequest;
+  | SearchProductsRequest
+  | PaginateProductsRequest;

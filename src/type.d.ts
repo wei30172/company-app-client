@@ -21,6 +21,7 @@ interface ProductsState {
   isLoading: boolean;
   error: string;
   filteredProducts: IProduct[];
+  paginatedProducts: IProduct[];
 }
 
 interface IProduct {

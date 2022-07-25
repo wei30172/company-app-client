@@ -4,6 +4,7 @@ import {
   filterProductsRequest,
   sortProductsRequest,
   searchProductsRequest,
+  paginateProductsRequest,
 } from "./actions";
 import { addToCartRequest } from "../cart/actions";
 
@@ -13,6 +14,7 @@ interface StateProps {
 const mapState = (state: StateProps) => ({
   products: state.product.products,
   filteredProducts: state.product.filteredProducts,
+  paginatedProducts: state.product.paginatedProducts,
   isLoading: state.product.isLoading,
   error: state.product.error,
 });
@@ -23,6 +25,7 @@ const mapDispatch = {
   sortProductsRequest,
   addToCartRequest,
   searchProductsRequest,
+  paginateProductsRequest,
 };
 
 export const productsConnector = connect(mapState, mapDispatch);

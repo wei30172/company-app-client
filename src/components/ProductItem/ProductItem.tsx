@@ -4,7 +4,7 @@ import {
   AddToCartRequestPayload,
   AddToCartRequest,
 } from "../../store/cart/types";
-import ProductModal from "../ProductModal/ProductModal";
+import { ProductModal } from "../index";
 import "./ProductItem.scss";
 
 type Props = {

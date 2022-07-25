@@ -5,6 +5,7 @@ import {
   FILTER_PRODUCTS_REQUEST,
   ORDER_PRODUCTS_REQUEST,
   SEARCH_PRODUCTS_REQUEST,
+  PAGINATE_PRODUCTS_REQUEST
 } from "./actionTypes";
 
 import { ProductActions } from "./types";
@@ -12,6 +13,7 @@ import { ProductActions } from "./types";
 const initialState: ProductsState = {
   products: [],
   filteredProducts: [],
+  paginatedProducts: [],
   isLoading: false,
   error: "",
 };
@@ -30,6 +32,7 @@ const productReducer = (state = initialState, action: ProductActions) => {
         isLoading: false,
         products: action.payload.products,
         filteredProducts: action.payload.products,
+        paginatedProducts: action.payload.products,
         error: null,
       };
 
@@ -39,6 +42,7 @@ const productReducer = (state = initialState, action: ProductActions) => {
         isLoading: false,
         products: [],
         filteredProducts: [],
+        paginatedProducts: [],
         error: action.payload.error,
       };
 
@@ -91,6 +95,12 @@ const productReducer = (state = initialState, action: ProductActions) => {
       return {
         ...state,
         filteredProducts: searchedProducts,
+      };
+
+    case PAGINATE_PRODUCTS_REQUEST:
+      return {
+        ...state,
+        paginatedProducts: action.payload.paginatedProducts,
       };
     default:
       return state;

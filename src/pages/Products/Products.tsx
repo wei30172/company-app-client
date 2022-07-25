@@ -3,6 +3,7 @@ import {
   ProductsNavbar,
   Filter,
   ProductsList,
+  Pagination,
   Cart,
   ScrollBtn,
 } from "../../components";
@@ -30,6 +31,7 @@ const Products = () => {
         <div className="main">
           <Filter />
           <ProductsList />
+          <Pagination />
         </div>
         {showCart && (
           <div className="sidebar">

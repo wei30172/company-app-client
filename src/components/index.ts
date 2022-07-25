@@ -12,3 +12,6 @@ export { default as ProductsNavbar } from "./ProductsNavbar/Navbar";
 export { default as Filter } from "./Filter/Filter";
 export { default as ProductsList } from "./ProductsList/ProductsList";
 export { default as Cart } from "./Cart/Cart";
+export { default as ProductItem } from "./ProductItem/ProductItem";
+export { default as ProductModal } from "./ProductModal/ProductModal";
+export { default as Pagination } from "./Pagination/Pagination";
