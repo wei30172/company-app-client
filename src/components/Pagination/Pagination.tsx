@@ -120,7 +120,7 @@ const Pagination = ({
       page * rowsPerPage + rowsPerPage,
     ) as [];
     // console.log(paginatedProducts);
-    paginateProductsRequest({paginatedProducts});
+    paginateProductsRequest({ paginatedProducts });
   }, [page, rowsPerPage, filteredProducts, paginateProductsRequest]);
 
   return (

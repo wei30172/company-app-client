@@ -5,7 +5,7 @@ import {
   FILTER_PRODUCTS_REQUEST,
   ORDER_PRODUCTS_REQUEST,
   SEARCH_PRODUCTS_REQUEST,
-  PAGINATE_PRODUCTS_REQUEST
+  PAGINATE_PRODUCTS_REQUEST,
 } from "./actionTypes";
 
 import { ProductActions } from "./types";
@@ -47,54 +47,21 @@ const productReducer = (state = initialState, action: ProductActions) => {
       };
 
     case ORDER_PRODUCTS_REQUEST:
-      let orderedProducts: IProduct[] = [...state.filteredProducts];
-      const order = action.payload.order;
-      orderedProducts.sort((a, b) =>
-        order === "lowest"
-          ? a.price < b.price
-            ? -1
-            : 1
-          : order === "highest"
-          ? a.price > b.price
-            ? -1
-            : 1
-          : order === "latest"
-          ? a._id > b._id
-            ? -1
-            : 1
-          : a._id < b._id
-          ? -1
-          : 1,
-      );
       return {
         ...state,
-        filteredProducts: orderedProducts,
+        filteredProducts: action.payload.orderedProducts,
       };
 
     case FILTER_PRODUCTS_REQUEST:
-      let filteredProducts: IProduct[] = [...state.products];
-      const filter = action.payload.filter;
-
-      filteredProducts =
-        filter === ""
-          ? filteredProducts
-          : filteredProducts.filter(
-              (product) => product.availableSizes.indexOf(filter) >= 0,
-            );
       return {
         ...state,
-        filteredProducts: filteredProducts,
+        filteredProducts: action.payload.filteredProducts,
       };
 
     case SEARCH_PRODUCTS_REQUEST:
-      let searchedProducts: IProduct[] = [...state.products];
-      const search = action.payload.search;
-      searchedProducts = searchedProducts.filter((product: IProduct) =>
-        product.title.includes(search),
-      );
       return {
         ...state,
-        filteredProducts: searchedProducts,
+        filteredProducts: action.payload.searchedProducts,
       };
 
     case PAGINATE_PRODUCTS_REQUEST:

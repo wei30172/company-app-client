@@ -11,6 +11,7 @@ import FormControl from "@material-ui/core/FormControl";
 import NativeSelect from "@material-ui/core/Select";
 
 const Filter = ({
+  products,
   filteredProducts,
   filterProductsRequest,
   sortProductsRequest,
@@ -20,38 +21,82 @@ const Filter = ({
   const [filter, setFilter] = useState("");
   const [search, setSearch] = useState("");
 
+  // Order Products
+  const handleOrderProducts = () => {
+    let newOrderedProducts: IProduct[] = [...filteredProducts];
+    newOrderedProducts.sort((a, b) =>
+      order === "lowest"
+        ? a.price < b.price
+          ? -1
+          : 1
+        : order === "highest"
+        ? a.price > b.price
+          ? -1
+          : 1
+        : order === "latest"
+        ? a._id > b._id
+          ? -1
+          : 1
+        : a._id < b._id
+        ? -1
+        : 1,
+    );
+    sortProductsRequest({ orderedProducts: newOrderedProducts });
+  };
+
   const handleSelectChange = (e: React.ChangeEvent<{ value: unknown }>) => {
     const target = e.target as HTMLInputElement;
     setOrder(target.value);
-    sortProductsRequest({ order: target.value });
+    handleOrderProducts();
+  };
+
+  // Filter Products
+  const handleFilterProducts = () => {
+    let newFilteredProducts: IProduct[] = [...products];
+    newFilteredProducts =
+      filter === ""
+        ? newFilteredProducts
+        : newFilteredProducts.filter(
+            (product) => product.availableSizes.indexOf(filter) >= 0,
+          );
+    filterProductsRequest({ filteredProducts: newFilteredProducts });
   };
 
   const handleFilterChange = (e: React.ChangeEvent<{ value: unknown }>) => {
     const target = e.target as HTMLInputElement;
     setOrder("");
     setFilter(target.value);
-    filterProductsRequest({ filter: target.value });
+    handleFilterProducts();
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Search Products
+  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement;
     setSearch(target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  const handleSearchProducts = () => {
+    let newSearchedProducts: IProduct[] = [...products];
+    newSearchedProducts = newSearchedProducts.filter((product: IProduct) =>
+      product.title.includes(search),
+    );
+    searchProductsRequest({ searchedProducts: newSearchedProducts });
+  };
+
+  const handleSearchingSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     setOrder("");
     setFilter("");
-    searchProductsRequest({ search });
+    handleSearchProducts();
   };
 
   return (
     <div className="filter">
       <div className="filter_result">{filteredProducts.length} Products</div>
       <div className="filter_search">
-        <form onSubmit={handleSubmit} noValidate autoComplete="off">
+        <form onSubmit={handleSearchingSubmit} noValidate autoComplete="off">
           <TextField
-            onChange={handleInputChange}
+            onChange={handleSearchInputChange}
             id="outlined-search"
             label="Search"
             type="search"

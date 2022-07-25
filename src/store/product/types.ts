@@ -31,15 +31,15 @@ export interface FetchProductsFailure {
 }
 
 export interface FilterProductsPayload {
-  filter: string;
+  filteredProducts: IProduct[];
 }
 
 export interface OrderProductsPayload {
-  order: string;
+  orderedProducts: IProduct[];
 }
 
 export interface SearchProductsPayload {
-  search: string;
+  searchedProducts: IProduct[];
 }
 
 export interface PaginateProductsPayload {
