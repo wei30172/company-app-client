@@ -1,10 +1,12 @@
+@use "../../styles/abstracts/colors" as *;
+
 .filter {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
   margin: 1rem;
-  border-bottom: 0.1rem #c0c0c0 solid;
+  border-bottom: 0.1rem $dark-300 solid;
   .filter_result {
     display: flex;
     align-items: center;
@@ -21,13 +23,6 @@
     div {
       flex: 1;
     }
-  }
-  select {
-    padding: .5rem;
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    color: #333;
   }
 }
 

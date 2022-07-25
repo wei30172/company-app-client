@@ -65,7 +65,7 @@ const ProductsIntro = React.forwardRef<Ref, Props>((props, ref) => {
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book.{" "}
               <Link to={"/products"}>
-                <span className="products-intro_content_paragraph_more cursor-pointer">
+                <span className="btn">
                   Our Products...
                 </span>
               </Link>

@@ -1,3 +1,5 @@
+@use "../../styles/abstracts/colors" as *;
+
 .products-intro {
   width: 100%;
   height: 100vh;
@@ -18,19 +20,13 @@
         font-size: 2.25rem;
         line-height: 2.5rem;
         font-weight: bold;
-        border-bottom: 4px solid #7CB074;
+        border-bottom: 4px solid $primary;
       }
       .products-intro_content_paragraph {
         margin-top: 1.5rem;
-        color: #333;
+        color: $text-primary;
         max-width: 300px;
         text-align: justify;
-        .products-intro_content_paragraph_more {
-          color: #7CB074;
-          &:hover {
-            font-weight: bold;
-          }
-        }
       }
       .products-intro_content_image {
         width: 400px;

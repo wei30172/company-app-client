@@ -3,23 +3,23 @@ import { createTheme } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 import Routes from "./Routes";
 import { Toaster } from "react-hot-toast";
-import "./styles/_base.scss";
+import "./styles/_main.scss";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#7CB074",
-      dark: "#567b51",
+      main: "#7cb474",
+      dark: "#2f9e44",
     },
     secondary: {
       main: "#f0c040",
     },
     text: {
-      primary: "#333",
-      secondary: "#666",
+      primary: "#1e293b",
+      secondary: "#64748b",
     },
     background: {
-      default: "#f7f7f7",
+      default: "#fefefe",
     },
   },
   typography: {

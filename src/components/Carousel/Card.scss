@@ -1,3 +1,5 @@
+@use "../../styles/abstracts/colors" as *;
+
 .carousel_item {
   position: relative; 
   width: 8rem;
@@ -30,14 +32,14 @@
     transition-property: opacity;
     transition-duration: 200ms;
     opacity: 0;
-    background: #7CB07450;
+    background-color: #7cb47450;
     &:hover {
       opacity: 1;
     }
     .carousel_item_text {
       margin: 0 auto;
       padding: 1.5rem 0.75rem;
-      color: #fff;
+      color: $white;
     }
   }
 }

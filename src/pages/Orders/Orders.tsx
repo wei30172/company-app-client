@@ -18,11 +18,11 @@ const Orders = ({
   }, [fetchOrdersRequest]);
 
   return isLoading ? (
-    <div className="page_state">
+    <div className="page_flex">
       <HourglassEmptyIcon />
     </div>
   ) : error ? (
-    <div className="page_state">
+    <div className="page_flex">
       <ErrorOutlineIcon />
     </div>
   ) : (

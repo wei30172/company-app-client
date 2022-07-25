@@ -1,3 +1,5 @@
+@use "../../styles/abstracts/colors" as *;
+
 .login, .signup {
   position: relative;
   width: 100%;
@@ -14,7 +16,7 @@
     justify-content: space-between;
     padding: .5rem;
     a {
-      color: #333;
+      color: $text-primary;
     }
   }
   .form {

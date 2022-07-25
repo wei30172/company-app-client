@@ -1,3 +1,5 @@
+@use "../../styles/abstracts/colors" as *;
+
 .products {
   .products_main {
     padding-top: 80px;
@@ -7,7 +9,6 @@
       flex: 3;
     }
     .sidebar {
-      background-color: #f5f5f5;
       flex: 1;
     }
   }

@@ -35,11 +35,11 @@ const Orders = ({
   const { _id, address, cartItems, total } = order;
 
   return isLoading ? (
-    <div className="page_state">
+    <div className="page_flex">
       <HourglassEmptyIcon />
     </div>
   ) : error ? (
-    <div className="page_state">
+    <div className="page_flex">
       <ErrorOutlineIcon />
     </div>
   ) : (

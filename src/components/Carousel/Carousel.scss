@@ -1,3 +1,5 @@
+@use "../../styles/abstracts/colors" as *;
+
 .carousel {
   margin: 0 auto;
   .carousel-container {
@@ -12,14 +14,14 @@
       .carousel-buttons-arrow {
         width: 2.5rem;
         height: 100%;
-        background: #7CB074;
+        background: $primary;
         z-index: 10;
         padding: 0;
         margin: 0;
         transition-property: all;
         transition-duration: 200ms;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        color: #fff;
+        color: $white;
         text-align: center;
         opacity: 0.75;
         &:hover {

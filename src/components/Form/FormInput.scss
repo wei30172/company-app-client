@@ -1,15 +1,17 @@
+@use "../../styles/abstracts/colors" as *;
+
 .form-input {
   margin-bottom: 1rem;
   span {
     display: none;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    color: #7CB074;
+    color: $primary;
   }
   input {
     width: 100%;
     padding: 0.5rem;
-    background-color: #E5E7EB;
+    background-color: $white;
     &:invalid.focused ~ span{
       display: block;
       margin-bottom: 0;
