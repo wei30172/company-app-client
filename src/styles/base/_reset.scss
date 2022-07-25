@@ -24,26 +24,15 @@ table {
   border-spacing: 0;
 }
 
-.light {
-  .text {
-    color: $dark-900;
-  }
-  .background {
-    background-color: $dark-100;
-  }
-}
-
-.dark {
-  .text {
-    color: $white;
-  }
-  .background {
-    background-color: $dark-700;
-  }
-}
-
 .cursor-pointer {
   cursor: pointer;
+}
+
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .page_flex {
@@ -72,4 +61,14 @@ table {
   &:hover{
     color: $text-primary;
   }
+}
+
+.light {
+  background-color: $dark-100;
+  color: $dark-900;
+}
+
+.dark {
+  background-color: $dark-700;
+  color: $white;
 }

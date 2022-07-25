@@ -15,7 +15,6 @@
     align-items: center;
   }
   .orders_list {
-    color: $text-primary;
     table {
       thead {
         th{
@@ -23,9 +22,6 @@
         }
       }
       tbody{
-        tr:nth-child(odd) {
-          background-color: $white;
-        }
         td{
           padding: 5px;
         }

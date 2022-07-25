@@ -4,6 +4,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "../../assets/logo.png";
 import { scrollToSection } from "../../utils/scrollToSection";
+import { SwitchMode } from "../index";
 import "./Navbar.scss";
 
 type Ref = HTMLDivElement;
@@ -36,61 +37,74 @@ const Navbar = React.forwardRef<Ref, Props>((props, ref) => {
           <img alt="logo" src={logo} style={{ width: "80px" }} />
         </div>
       </a>
+      <div className="flex">
+        {/* pc menu */}
+        <div className="navbar_menu">
+          <ul className="flex">
+            <li
+              className="cursor-pointer"
+              onClick={() => navigate("/products")}
+            >
+              Our Products
+            </li>
+            <li
+              className="cursor-pointer"
+              onClick={() => scrollToSection(productsRef)}
+            >
+              About Products
+            </li>
+            <li
+              className="cursor-pointer"
+              onClick={() => scrollToSection(aboutRef)}
+            >
+              About Us
+            </li>
+            <li
+              className="cursor-pointer"
+              onClick={() => scrollToSection(missionRef)}
+            >
+              Our Mission
+            </li>
+          </ul>
+        </div>
 
-      {/* menu */}
-      <div className="navbar_menu">
-        <ul>
+        {/* hamburger */}
+        <div
+          onClick={() => setShowMobMenu(!showMobMenu)}
+          className="navbar_hamburger"
+        >
+          {!showMobMenu ? (
+            <MenuIcon className="cursor-pointer" />
+          ) : (
+            <CloseIcon className="cursor-pointer" />
+          )}
+        </div>
+
+        {/* mobile menu */}
+        <ul className={!showMobMenu ? "navbar_hidden" : "navbar_mobile-menu"}>
           <li className="cursor-pointer" onClick={() => navigate("/products")}>
             Our Products
           </li>
           <li
             className="cursor-pointer"
-            onClick={() => scrollToSection(productsRef)}
+            onClick={() => handleClick(productsRef)}
           >
             About Products
           </li>
-          <li
-            className="cursor-pointer"
-            onClick={() => scrollToSection(aboutRef)}
-          >
+          <li className="cursor-pointer" onClick={() => handleClick(aboutRef)}>
             About Us
           </li>
           <li
             className="cursor-pointer"
-            onClick={() => scrollToSection(missionRef)}
+            onClick={() => handleClick(missionRef)}
           >
             Our Mission
           </li>
         </ul>
-      </div>
 
-      {/* hamburger */}
-      <div
-        onClick={() => setShowMobMenu(!showMobMenu)}
-        className="navbar_hamburger"
-      >
-        {!showMobMenu ? (
-          <MenuIcon className="cursor-pointer" />
-        ) : (
-          <CloseIcon className="cursor-pointer" />
-        )}
+        {/* switch mode */}
+        <SwitchMode />
       </div>
-
-      {/* mobile menu */}
-      <ul className={!showMobMenu ? "navbar_hidden" : "navbar_mobile-menu"}>
-        <li className="cursor-pointer" onClick={() => navigate("/products")}>
-          Our Products
-        </li>
-        <li className="cursor-pointer" onClick={() => handleClick(productsRef)}>
-          About Products
-        </li>
-        <li className="cursor-pointer" onClick={() => handleClick(aboutRef)}>
-          About Us
-        </li>
-        <li className="cursor-pointer" onClick={() => handleClick(missionRef)}>
-          Our Mission
-        </li>
-      </ul>
     </div>
   );
 });

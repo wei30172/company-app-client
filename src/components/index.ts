@@ -15,3 +15,5 @@ export { default as Cart } from "./Cart/Cart";
 export { default as ProductItem } from "./ProductItem/ProductItem";
 export { default as ProductModal } from "./ProductModal/ProductModal";
 export { default as Pagination } from "./Pagination/Pagination";
+
+export { default as SwitchMode } from "./SwitchMode/SwitchMode";
