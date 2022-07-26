@@ -1,4 +1,4 @@
-## Company website
+## Company Website Template
 
 A Company website template, built with React, Redux Saga TypeScript, and Sass.
 
