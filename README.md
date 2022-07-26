@@ -3,8 +3,10 @@
 A Company website template, built with React, Redux Saga TypeScript, and Sass.
 
 ## Project Screenshots
-![image](https://user-images.githubusercontent.com/60259324/180595457-e6144768-ce75-4728-aea9-b429e40f6028.png)
-![image](https://user-images.githubusercontent.com/60259324/180595488-b1e39f52-7197-459b-8253-59c346217250.png)
+![company-app-template1](https://user-images.githubusercontent.com/60259324/180935816-5e5e9ab1-c63c-4307-886b-752f56f3f3f9.png)
+![company-app-template2](https://user-images.githubusercontent.com/60259324/180935832-950727a8-a521-4e53-9c57-84a14229f203.png)
+![company-app-template4](https://user-images.githubusercontent.com/60259324/180935868-60727091-3557-425f-8d2d-00f15024f729.png)
+![company-app-template6](https://user-images.githubusercontent.com/60259324/180935889-f282a077-31d0-42dc-8579-5dec426ed7e6.png)
 
 ## Test email & password
 test@testnet.co.us / test1234
