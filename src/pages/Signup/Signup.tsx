@@ -132,7 +132,10 @@ const Signup = ({ token, signupRequest }: PropsFromRedux) => {
 
       <p>
         Already have an account?
-        <button className="link cursor-pointer" onClick={() => navigate("/login")}>
+        <button
+          className="link cursor-pointer"
+          onClick={() => navigate("/login")}
+        >
           Login
         </button>
       </p>

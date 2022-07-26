@@ -12,6 +12,6 @@ const useCount = (cartItems: IProduct[]) => {
   }, [cartItems]);
 
   return [cartItemsCount];
-}
+};
 
 export default useCount;

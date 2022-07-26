@@ -9,7 +9,6 @@ import Close from "@material-ui/icons/Close";
 import { SwitchMode } from "../index";
 import "./Navbar.scss";
 
-
 interface Props extends PropsFromRedux {
   showCart: boolean;
   handleSetShowCart: () => void;

@@ -24,7 +24,7 @@ const Cart: React.FC<Props> = ({
   };
 
   const [cartItemsCount] = useCount(cartItems);
-  
+
   const calculateTotal = (items: IProduct[]) =>
     items.reduce(
       (totalItems: number, item) => totalItems + item.price * item.count,
