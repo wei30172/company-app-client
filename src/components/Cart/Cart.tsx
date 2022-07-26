@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useCount from "../../hooks/usetCartItemsCount";
 import { PropsFromRedux, cartConnector } from "../../store/cart/connector";
 import formatCurrency from "../../utils/formatCurrency";
 import CartItem from "../CartItem/CartItem";
@@ -22,6 +23,8 @@ const Cart: React.FC<Props> = ({
     handleSetShowCart();
   };
 
+  const [cartItemsCount] = useCount(cartItems);
+  
   const calculateTotal = (items: IProduct[]) =>
     items.reduce(
       (totalItems: number, item) => totalItems + item.price * item.count,
@@ -36,7 +39,7 @@ const Cart: React.FC<Props> = ({
         <div className="cart_header">Cart is empty</div>
       ) : (
         <div className="cart_header">
-          You have {cartItems.length} products in the cart
+          You have {cartItemsCount} products in the cart
         </div>
       )}
 

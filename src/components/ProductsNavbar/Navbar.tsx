@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useCount from "../../hooks/usetCartItemsCount";
 import { PropsFromRedux, authConnector } from "../../store/auth/connector";
 import CloseIcon from "@material-ui/icons/Close";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -7,6 +8,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Close from "@material-ui/icons/Close";
 import { SwitchMode } from "../index";
 import "./Navbar.scss";
+
 
 interface Props extends PropsFromRedux {
   showCart: boolean;
@@ -22,15 +24,7 @@ const Navbar = ({
 }: Props) => {
   const navigate = useNavigate();
   const [showMobMenu, setShowMobMenu] = useState(false);
-  const [cartItemsCount, setCartItemsCount] = useState(0);
-
-  useEffect(() => {
-    if (cartItems.length > 0) {
-      setCartItemsCount(
-        cartItems.reduce((total, item) => total + item.count, 0),
-      );
-    }
-  }, [cartItems]);
+  const [cartItemsCount] = useCount(cartItems);
 
   const handleLogout = () => {
     localStorage.removeItem("auth");
