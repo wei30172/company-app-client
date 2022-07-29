@@ -20,11 +20,11 @@ const ProductsList = ({
   }, [fetchProductsRequest]);
 
   return isLoading ? (
-    <div className="page_flex">
+    <div className="page-flex">
       <HourglassEmptyIcon />
     </div>
   ) : error ? (
-    <div className="page_flex">
+    <div className="page-flex">
       <ErrorOutlineIcon />
     </div>
   ) : (
