@@ -72,7 +72,7 @@ const Login = ({ token, loginRequest }: PropsFromRedux) => {
 
   return (
     <div className="login">
-      <div className="icons">
+      <div className="login_icons">
         <Link to={"/"}>
           <HomeRounded />
         </Link>
@@ -80,11 +80,9 @@ const Login = ({ token, loginRequest }: PropsFromRedux) => {
           <LocalMallRoundedIcon />
         </Link>
       </div>
-      <form onSubmit={handleLogin}>
-        <div className="form">
-          <h2>Login</h2>
-          <p>Please login to continue.</p>
-
+      <div className="login_form">
+        <h2>Login</h2>
+        <form onSubmit={handleLogin}>
           {formInputs.map((input) => (
             <div key={input.id}>
               <FormInput
@@ -95,20 +93,18 @@ const Login = ({ token, loginRequest }: PropsFromRedux) => {
               />
             </div>
           ))}
-
           <input className="btn" type="submit" value="LOGIN" />
+        </form>
+        <div className="login_form_link flex">
+          <p>Do not have an account?</p>
+          <button
+            className="cursor-pointer"
+            onClick={() => navigate("/signup")}
+          >
+            Signup
+          </button>
         </div>
-      </form>
-
-      <p>
-        Do not have an account?
-        <button
-          className="link cursor-pointer"
-          onClick={() => navigate("/signup")}
-        >
-          Signup
-        </button>
-      </p>
+      </div>
     </div>
   );
 };

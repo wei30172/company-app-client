@@ -24,7 +24,7 @@ const Signup = ({ token, signupRequest }: PropsFromRedux) => {
   const formInputs = [
     {
       id: 1,
-      label: "firstName",
+      label: "first Name",
       errorMessage:
         "FirstName should be 2-16 characters and shouldn't include any special character!",
       name: "firstName",
@@ -35,7 +35,7 @@ const Signup = ({ token, signupRequest }: PropsFromRedux) => {
     },
     {
       id: 2,
-      label: "lastName",
+      label: "last Name",
       errorMessage:
         "LastName should be 2-16 characters and shouldn't include any special character!",
       name: "lastName",
@@ -103,7 +103,7 @@ const Signup = ({ token, signupRequest }: PropsFromRedux) => {
 
   return (
     <div className="signup">
-      <div className="icons">
+      <div className="signup_icons">
         <Link to={"/"}>
           <HomeRounded />
         </Link>
@@ -111,10 +111,9 @@ const Signup = ({ token, signupRequest }: PropsFromRedux) => {
           <LocalMallRoundedIcon />
         </Link>
       </div>
-      <form onSubmit={handleSignup}>
-        <div className="form">
-          <h2>Signup</h2>
-
+      <div className="signup_form">
+        <h2>Signup</h2>
+        <form onSubmit={handleSignup}>
           {formInputs.map((input) => (
             <div key={input.id}>
               <FormInput
@@ -125,20 +124,15 @@ const Signup = ({ token, signupRequest }: PropsFromRedux) => {
               />
             </div>
           ))}
-
           <input className="btn" type="submit" value="REGISTER" />
+        </form>
+        <div className="signup_form_link flex">
+          <p>Already have an account?</p>
+          <button className="cursor-pointer" onClick={() => navigate("/login")}>
+            Login
+          </button>
         </div>
-      </form>
-
-      <p>
-        Already have an account?
-        <button
-          className="link cursor-pointer"
-          onClick={() => navigate("/login")}
-        >
-          Login
-        </button>
-      </p>
+      </div>
     </div>
   );
 };

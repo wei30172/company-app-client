@@ -31,10 +31,10 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className={`App ${darkMode ? "dark" : "light"}`}>
+      <main className={`App ${darkMode ? "dark" : "light"}`}>
         <Toaster />
         <Routes />
-      </div>
+      </main>
     </ThemeProvider>
   );
 }

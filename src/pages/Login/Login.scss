@@ -8,7 +8,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  .icons {
+  color: colors.$white;
+  .login_icons, .signup_icons {
     width: 100%;
     position: absolute;
     top: 0;
@@ -19,28 +20,30 @@
       color: colors.$primary;
     }
   }
-  .form {
+  .login_form, .signup_form {
+    min-height: 520px;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    border: 1rem solid gray;
-    padding: 1rem;
+    background-color: colors.$background-dark;
+    padding: 2rem;
     z-index: 2;
-    h2 {
-      margin-bottom: 1rem;
-    }
-    .form-input {
+    input {
       width: 300px;
     }
-  }
-  .link {
-    margin: 0 .5rem;
-    padding: .2rem;
-    border-bottom: 1px solid #000;
-    &:hover {
-      font-weight: bold;
+    .login_form_link, .signup_form_link {
+      button {
+        background-color: transparent;
+        margin: 0 .5rem;
+        padding: .2rem;
+        color: colors.$white;
+        border-bottom: 1px solid colors.$white;
+        &:hover {
+          font-weight: bold;
+        }
+      }
     }
   }
 }
