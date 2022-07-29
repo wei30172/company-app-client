@@ -1,8 +1,8 @@
 ## Company Website Template
 
 A Company website template, built with React, Redux Saga TypeScript, and Sass.\
-1.Global state management with Redux-Saga.\
-2.Build multiple reusable components to complete the website.
+1. Global state management with Redux-Saga.\
+2. Build multiple reusable components to complete the website.
 
 ## Project Screenshots
 ![company-app-template1](https://user-images.githubusercontent.com/60259324/180935816-5e5e9ab1-c63c-4307-886b-752f56f3f3f9.png)
