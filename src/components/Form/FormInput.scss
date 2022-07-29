@@ -1,6 +1,7 @@
 @use "../../styles/mixin/colors" as colors;
 
 .form-input {
+  width: 300px;
   margin-bottom: 1rem;
   span {
     display: none;
