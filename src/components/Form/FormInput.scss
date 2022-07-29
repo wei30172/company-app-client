@@ -1,4 +1,4 @@
-@use "../../styles/abstracts/colors" as *;
+@use "../../styles/mixin/colors" as colors;
 
 .form-input {
   margin-bottom: 1rem;
@@ -6,12 +6,12 @@
     display: none;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    color: $primary;
+    color: colors.$primary;
   }
   input {
     width: 100%;
     padding: 0.5rem;
-    background-color: $white;
+    background-color: colors.$white;
     &:invalid.focused ~ span{
       display: block;
       margin-bottom: 0;

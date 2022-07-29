@@ -1,4 +1,5 @@
-@use "../../styles/abstracts/colors" as *;
+@use "../../styles/mixin/colors" as colors;
+@use "../../styles/mixin/screens" as screens;
 
 .filter {
   display: flex;
@@ -6,7 +7,7 @@
   gap: 1rem;
   padding: 1rem;
   margin: 1rem;
-  border-bottom: 0.1rem $dark-300 solid;
+  border-bottom: 0.1rem colors.$dark-300 solid;
   .filter_result {
     display: flex;
     align-items: center;
@@ -26,7 +27,7 @@
   }
 }
 
-@media (min-width: 768px) { 
+@include screens.tablet {
   .filter {
     display: flex;
     flex-direction: row;

@@ -1,3 +1,5 @@
+@use "../../styles/mixin/screens" as screens;
+
 .products {
   .products_main {
     padding-top: 80px;
@@ -10,10 +12,11 @@
       flex: 1;
     }
   }
-  
-  @media (min-width: 768px) { 
+}
+
+@include screens.tablet {
+  .products {
     .products_main {
-      display: flex;
       flex-direction: row;
     }  
   }

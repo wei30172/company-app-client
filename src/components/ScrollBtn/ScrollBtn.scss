@@ -1,4 +1,4 @@
-@use "../../styles/abstracts/colors" as *;
+@use "../../styles/mixin/colors" as colors;
 
 .scroll-btn {
   cursor: pointer;
@@ -9,7 +9,7 @@
   .scroll-btn_icon {
     width: 35px;
     height: 35px;
-    background: $primary;
+    background: colors.$primary;
     box-shadow: 2px 6px 10px rgba(0,0,0,0.1);
     border-radius: 50%;
     display: flex;
@@ -17,7 +17,7 @@
     align-items: center;
     .scroll-btn_icon_arrow-up {
       margin-top: 6px;
-      border: solid $white;
+      border: solid colors.$white;
       border-width: 0 3px 3px 0;
       display: inline-block;
       padding: 6px;

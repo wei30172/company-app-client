@@ -1,4 +1,4 @@
-@use "../../styles/abstracts/colors" as *;
+@use "../../styles/mixin/colors" as colors;
 
 .login, .signup {
   position: relative;
@@ -16,7 +16,7 @@
     justify-content: space-between;
     padding: .5rem;
     a {
-      color: $primary;
+      color: colors.$primary;
     }
   }
   .form {

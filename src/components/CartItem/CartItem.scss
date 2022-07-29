@@ -1,10 +1,10 @@
-@use "../../styles/abstracts/colors" as *;
+@use "../../styles/mixin/colors" as colors;
 
 .cart-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid $dark-300;
+  border-bottom: 1px solid colors.$dark-300;
   padding: 1rem 0;
   div {
     flex: 1;
@@ -19,11 +19,11 @@
     }
   }
   .remove {
-    background-color: $secondary;
-    color: $text-primary;
+    background-color: colors.$secondary;
+    color: colors.$text-primary;
     margin-right: .5rem;
     &:hover {
-      color: $danger-primary;
+      color: colors.$danger-primary;
     }
   }
   .count {

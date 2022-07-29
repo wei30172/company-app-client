@@ -1,7 +1,9 @@
+@use "../../styles/mixin/screens" as screens;
+
 .products-list {
   min-height: 20rem;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto;
   grid-gap: 15px 10px;
   padding: 10px;
 }
@@ -16,20 +18,14 @@
   }
 }
 
-@media (max-width: 1440px) {
+@include screens.tablet {
   .products-list {
     grid-template-columns: auto auto auto;
   }
 }
 
-@media (max-width: 1024px) {
+@include screens.desktop {
   .products-list {
-    grid-template-columns: auto auto;
-  }
-}
-
-@media (max-width: 420px) {
-  .products-list {
-    grid-template-columns: auto;
+    grid-template-columns: auto auto auto auto;
   }
 }

@@ -1,4 +1,5 @@
-@use "../../styles/abstracts/colors" as *;
+@use "../../styles/mixin/colors" as colors;
+@use "../../styles/mixin/screens" as screens;
 
 .home-navbar {
   width: 100%;
@@ -9,8 +10,8 @@
   position: fixed;
   z-index: 20;
   padding: 0 1rem;
-  background-color: $primary;
-  color: $white;
+  background-color: colors.$primary;
+  color: colors.$white;
   .navbar_menu {
     display: none;
     ul {
@@ -31,7 +32,7 @@
     right: 0;
     padding-top: 5rem;
     background-color: #16161699;
-    color: $white;
+    color: colors.$white;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -47,7 +48,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@include screens.tablet {
   .home-navbar {
     .navbar_menu {
       display: flex;
@@ -63,4 +64,4 @@
       }
     }
   }
- }
+}

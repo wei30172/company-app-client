@@ -1,4 +1,5 @@
-@use "../../styles/abstracts/colors" as *;
+@use "../../styles/mixin/colors" as colors;
+@use "../../styles/mixin/screens" as screens;
 
 .products-navbar {
   width: 100%;
@@ -9,7 +10,7 @@
   position: fixed;
   z-index: 20;
   padding: 0 2rem;
-  background-color: $primary;
+  background-color: colors.$primary;
   .cart-button {
     position: absolute;
     z-index: 99;
@@ -26,8 +27,8 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: $secondary;
-    color: $text-primary; 
+    background-color: colors.$secondary;
+    color: colors.$text-primary; 
     border-radius: 50%;  
   }
   .navbar_menu {
@@ -51,7 +52,7 @@
     left: 0;
     padding-top: 5rem;
     background-color: #16161695;
-    color: $white;
+    color: colors.$white;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -67,7 +68,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@include screens.tablet {
   .products-navbar {
     .navbar_menu {
       display: flex;
@@ -83,4 +84,4 @@
       }
     }
   }
- }
+}
