@@ -65,6 +65,12 @@ const Navbar = React.forwardRef<Ref, Props>((props, ref) => {
             >
               Our Mission
             </li>
+            <li
+              className="cursor-pointer"
+              onClick={() => navigate("/login")}
+            >
+              Login
+            </li>
           </ul>
         </div>
 
@@ -99,6 +105,9 @@ const Navbar = React.forwardRef<Ref, Props>((props, ref) => {
             onClick={() => handleClick(missionRef)}
           >
             Our Mission
+          </li>
+          <li className="cursor-pointer" onClick={() => navigate("/login")}>
+            Login
           </li>
         </ul>
 
