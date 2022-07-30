@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ErrorIcon from '@material-ui/icons/Error';
+import ErrorIcon from "@material-ui/icons/Error";
 import "./FormInput.scss";
 
 export type InputType = {
