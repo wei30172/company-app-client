@@ -56,7 +56,6 @@ const Login = ({ token, loginRequest }: PropsFromRedux) => {
       token: res.token,
     };
     localStorage.setItem("auth", JSON.stringify(auth));
-    // navigate("/");
   };
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {

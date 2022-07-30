@@ -87,7 +87,6 @@ const Signup = ({ token, signupRequest }: PropsFromRedux) => {
       token: res.token,
     };
     localStorage.setItem("auth", JSON.stringify(auth));
-    // navigate("/");
   };
 
   const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
