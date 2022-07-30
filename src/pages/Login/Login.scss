@@ -1,4 +1,5 @@
 @use "../../styles/mixin/colors" as colors;
+@use "../../styles/mixin/screens" as screens;
 
 .login, .signup {
   position: relative;
@@ -9,17 +10,6 @@
   justify-content: center;
   align-items: center;
   color: colors.$white;
-  .login_icons, .signup_icons {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    padding: .5rem;
-    a {
-      color: colors.$primary;
-    }
-  }
   .login_form, .signup_form {
     min-height: 520px;
     position: relative;
@@ -28,8 +18,12 @@
     justify-content: space-between;
     align-items: center;
     background-color: colors.$background-dark;
-    padding: 2rem;
+    padding: 3rem 1.2rem 1rem;
     z-index: 2;
+    .btn {
+      width: 50%;
+      margin: .3rem auto;
+    }
     .login_form_link, .signup_form_link {
       button {
         background-color: transparent;
@@ -40,6 +34,16 @@
         &:hover {
           font-weight: bold;
         }
+      }
+    }
+  }
+}
+
+@include screens.tablet {
+  .login, .signup {
+    .login_form, .signup_form {
+      .btn {
+        margin: 2rem auto;
       }
     }
   }

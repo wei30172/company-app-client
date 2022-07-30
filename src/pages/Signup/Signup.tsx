@@ -101,14 +101,6 @@ const Signup = ({ token, signupRequest }: PropsFromRedux) => {
 
   return (
     <div className="signup">
-      <div className="signup_icons">
-        <Link to={"/"}>
-          <HomeRounded />
-        </Link>
-        <Link to={"/products"}>
-          <LocalMallRoundedIcon />
-        </Link>
-      </div>
       <div className="signup_form">
         <h2>Signup</h2>
         <form onSubmit={handleSignup}>

@@ -70,14 +70,6 @@ const Login = ({ token, loginRequest }: PropsFromRedux) => {
 
   return (
     <div className="login">
-      <div className="login_icons">
-        <Link to={"/"}>
-          <HomeRounded />
-        </Link>
-        <Link to={"/products"}>
-          <LocalMallRoundedIcon />
-        </Link>
-      </div>
       <div className="login_form">
         <h2>Login</h2>
         <form onSubmit={handleLogin}>

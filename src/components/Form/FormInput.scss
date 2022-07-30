@@ -1,21 +1,28 @@
 @use "../../styles/mixin/colors" as colors;
+@use "../../styles/mixin/screens" as screens;
 
 .form-input {
-  width: 300px;
-  margin-bottom: 1rem;
+  width: 100%;
+  margin-bottom: .2rem;
   span {
+    width: 300px;
     display: none;
     font-size: 0.875rem;
     line-height: 1.25rem;
     color: colors.$primary;
   }
   input {
-    width: 100%;
+    width: 300px;
     padding: 0.5rem;
     background-color: colors.$white;
     &:invalid.focused ~ span{
       display: block;
-      margin-bottom: 0;
     }
+  }
+}
+
+@include screens.tablet {
+  .form-input {
+    margin-bottom: 1.5rem;
   }
 }
