@@ -4,8 +4,9 @@ import { PropsFromRedux, authConnector } from "../../store/auth/connector";
 import { FormInput } from "../../components";
 import { AuthPayloadValues } from "../../store/auth/types";
 import "./Login.scss";
+import HourglassEmptyIcon from "@material-ui/icons/HourglassEmpty";
 
-const Login = ({ token, loginRequest }: PropsFromRedux) => {
+const Login = ({ token, isLoading, loginRequest }: PropsFromRedux) => {
   const navigate = useNavigate();
   const [userInputs, setUserInputs] = useState<AuthPayloadValues>({
     firstName: "",
@@ -66,7 +67,11 @@ const Login = ({ token, loginRequest }: PropsFromRedux) => {
     setUserInputs({ ...userInputs, [target.name]: target.value });
   };
 
-  return (
+  return isLoading ? (
+    <div className="page-flex">
+      <HourglassEmptyIcon />
+    </div>
+  ) : (
     <div className="login">
       <div className="login_form">
         <h2>Login</h2>

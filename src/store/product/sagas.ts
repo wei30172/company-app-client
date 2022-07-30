@@ -1,11 +1,11 @@
-import { api } from "../../api/shoppingAPI";
+import { getProducts } from "../../api/productAPI";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import { fetchProductsSuccess, fetchProductsFailure } from "./actions";
 import { FECTCH_PRODUCTS_REQUEST } from "./actionTypes";
 
 const fetchProducts = async () => {
-  const { data } = await api.get<IProduct[]>("/api/products");
-  return data;
+  const res = await getProducts();
+  return res;
 };
 
 function* fetchProductsSaga() {

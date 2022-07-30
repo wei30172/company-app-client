@@ -4,8 +4,9 @@ import { PropsFromRedux, authConnector } from "../../store/auth/connector";
 import { FormInput } from "../../components";
 import { AuthPayloadValues } from "../../store/auth/types";
 import "../Login/Login.scss";
+import HourglassEmptyIcon from "@material-ui/icons/HourglassEmpty";
 
-const Signup = ({ token, signupRequest }: PropsFromRedux) => {
+const Signup = ({ token, isLoading, signupRequest }: PropsFromRedux) => {
   const navigate = useNavigate();
   const [userInputs, setUserInputs] = useState<AuthPayloadValues>({
     firstName: "",
@@ -97,7 +98,11 @@ const Signup = ({ token, signupRequest }: PropsFromRedux) => {
     setUserInputs({ ...userInputs, [target.name]: target.value });
   };
 
-  return (
+  return isLoading ? (
+    <div className="page-flex">
+      <HourglassEmptyIcon />
+    </div>
+  ) : (
     <div className="signup">
       <div className="signup_form">
         <h2>Signup</h2>

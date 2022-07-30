@@ -1,4 +1,4 @@
-import { api } from "../../api/authAPI";
+import { login, signup } from "../../api/authAPI";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import {
   loginSuccess,
@@ -14,16 +14,16 @@ const userLogin = async (payload: {
   values: AuthPayloadValues;
   callback: () => void;
 }) => {
-  const { data } = await api.post("/user/login", payload.values);
-  return data;
+  const res = await login(payload.values);
+  return res;
 };
 
 const userSignup = async (payload: {
   values: AuthPayloadValues;
   callback: () => void;
 }) => {
-  const { data } = await api.post("/user/signup", payload.values);
-  return data;
+  const res = await signup(payload.values);
+  return res;
 };
 
 function* loginSaga(action: any) {

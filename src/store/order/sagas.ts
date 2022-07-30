@@ -1,4 +1,4 @@
-import { api } from "../../api/shoppingAPI";
+import { addOrder, getOrders } from "../../api/orderAPI";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import {
   createOrderSuccess,
@@ -12,19 +12,19 @@ import { toast } from "react-hot-toast";
 
 const createOrder = async (payload: { order: IOrder }) => {
   const { email, name, address, total, cartItems } = payload.order;
-  const { data } = await api.post<IOrder>("/api/orders", {
+  const res: IOrder = await addOrder({
     email,
     name,
     address,
     total,
     cartItems,
   });
-  return data;
+  return res;
 };
 
 const fetchOrders = async () => {
-  const { data } = await api.get<IOrder[]>("/api/orders");
-  return data;
+  const res: IOrder[] = await getOrders();
+  return res;
 };
 
 function* createOrderSaga(action: any) {
