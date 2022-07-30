@@ -11,7 +11,7 @@ A Company website template, built with React, Redux Saga TypeScript, and Sass.
 ![company-app-template6](https://user-images.githubusercontent.com/60259324/180935889-f282a077-31d0-42dc-8579-5dec426ed7e6.png)
 
 ## Test email & password
-test@testnet.co.us / test1234
+testemail@testnet.co.us / test1234!
 
 ## Getting Started with Create React App
 
