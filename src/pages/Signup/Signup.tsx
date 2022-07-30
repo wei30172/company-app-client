@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { PropsFromRedux, authConnector } from "../../store/auth/connector";
 import { FormInput } from "../../components";
 import { AuthPayloadValues } from "../../store/auth/types";
-import HomeRounded from "@material-ui/icons/HomeRounded";
-import LocalMallRoundedIcon from "@material-ui/icons/LocalMallRounded";
 import "../Login/Login.scss";
 
 const Signup = ({ token, signupRequest }: PropsFromRedux) => {

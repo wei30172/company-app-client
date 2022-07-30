@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ErrorIcon from '@material-ui/icons/Error';
 import "./FormInput.scss";
 
 export type InputType = {
@@ -53,7 +54,10 @@ const FormInput: React.FC<Props> = ({
         onBlur={handleFocus}
         focused={focused}
       />
-      <span>{errorMessage}</span>
+      <span>
+        <ErrorIcon />
+        {errorMessage}
+      </span>
     </div>
   );
 };
