@@ -10,8 +10,6 @@ export const getOrders = async () => {
 };
 
 export const addOrder = async (orderPayloadValues: IOrder) => {
-  const { data } = await api.post("/", JSON.stringify(orderPayloadValues), {
-    headers: { "Content-Type": "application/json" },
-  });
+  const { data } = await api.post("/", orderPayloadValues);
   return data;
 };

@@ -11,10 +11,10 @@ import { CLEAR_CART_REQUEST } from "../cart/actionTypes";
 import { toast } from "react-hot-toast";
 
 const createOrder = async (payload: { order: IOrder }) => {
-  const { email, name, address, total, cartItems } = payload.order;
+  const { name, email, address, total, cartItems } = payload.order;
   const res: IOrder = await addOrder({
-    email,
     name,
+    email,
     address,
     total,
     cartItems,
