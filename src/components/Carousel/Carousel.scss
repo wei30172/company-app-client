@@ -2,16 +2,16 @@
 
 .carousel {
   margin: 0 auto;
-  .carousel-container {
+  .carousel_container {
     overflow: hidden;
     position: relative; 
-    .carousel-buttons {
+    .carousel_buttons {
       width: 100%;
       height: 100%;
       display: flex;
       justify-content: space-between; 
       position: absolute;
-      .carousel-buttons-arrow {
+      .carousel_buttons_arrow {
         width: 2.5rem;
         height: 100%;
         background: colors.$primary;
@@ -32,13 +32,13 @@
           cursor: not-allowed;
         }
       }
-      .carousel-buttons-icon {
+      .carousel_buttons_arrow_icon {
         width: 5rem;
         height: 3rem;
-        margin-left: -1.25rem;
+        margin-left: -1rem;
       }
     }
-    .carousel-card {
+    .carousel_cards {
       display: flex;
       overflow: hidden;
       position: relative;

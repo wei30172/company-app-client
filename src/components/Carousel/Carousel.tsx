@@ -66,24 +66,24 @@ const Carousel: React.FC<Props> = ({
 
   return (
     <div className="carousel">
-      <div className="carousel-container">
-        <div className="carousel-buttons">
+      <div className="carousel_container">
+        <div className="carousel_buttons">
           <button
             onClick={movePrev}
-            className="carousel-buttons-arrow"
+            className="carousel_buttons_arrow cursor-pointer"
             disabled={isDisabled("prev")}
           >
-            <ArrowBackIosIcon className="carousel-buttons-icon" />
+            <ArrowBackIosIcon className="carousel_buttons_arrow_icon" />
           </button>
           <button
             onClick={moveNext}
-            className="carousel-buttons-arrow"
+            className="carousel_buttons_arrow cursor-pointer"
             disabled={isDisabled("next")}
           >
-            <ArrowForwardIosIcon className="carousel-buttons-icon" />
+            <ArrowForwardIosIcon className="carousel_buttons_arrow_icon" />
           </button>
         </div>
-        <div ref={carousel} className="carousel-card">
+        <div ref={carousel} className="carousel_cards">
           {carouselItems.map((item) => {
             return (
               <Card
