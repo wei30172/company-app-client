@@ -7,12 +7,7 @@ import CheckOutForm from "../CheckOutForm/CheckOutForm";
 import "./Cart.scss";
 import HourglassEmptyIcon from "@material-ui/icons/HourglassEmpty";
 
-interface Props extends PropsFromRedux {
-  handleSetShowCart: () => void;
-}
-
-const Cart: React.FC<Props> = ({
-  handleSetShowCart,
+const Cart: React.FC<PropsFromRedux> = ({
   cartItems,
   isLoading,
   addToCartRequest,
@@ -20,10 +15,6 @@ const Cart: React.FC<Props> = ({
   createOrderRequest,
 }) => {
   const [showCheckOut, setShowCheckOut] = useState(false);
-
-  const closeModal = () => {
-    handleSetShowCart();
-  };
 
   const [cartItemsCount] = useCount(cartItems);
 
@@ -62,19 +53,18 @@ const Cart: React.FC<Props> = ({
           >
             Proceed
           </button>
-          {showCheckOut &&
-            (isLoading ? (
+          {showCheckOut && (
+            isLoading ? (
               <div className="flex">
                 <HourglassEmptyIcon />
               </div>
             ) : (
-              <CheckOutForm
-                cartItems={cartItems}
-                total={formatCurrency(calculateTotal(cartItems))}
-                createOrderRequest={createOrderRequest}
-                closeModal={closeModal}
-              />
-            ))}
+            <CheckOutForm
+              cartItems={cartItems}
+              total={formatCurrency(calculateTotal(cartItems))}
+              createOrderRequest={createOrderRequest}
+            />
+          ))}
         </>
       )}
     </div>

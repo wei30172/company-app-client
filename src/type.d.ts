@@ -38,7 +38,6 @@ interface IProduct {
 
 // Order
 interface OrdersState {
-  order: IOrder;
   orders: IOrder[];
   isLoading: boolean;
   error: string;

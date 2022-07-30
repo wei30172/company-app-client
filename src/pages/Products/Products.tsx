@@ -53,7 +53,7 @@ const Products = ({ cartItems }: PropsFromRedux) => {
         </div>
         {showCart && (
           <div className="sidebar">
-            <Cart handleSetShowCart={handleSetShowCart} />
+            <Cart />
           </div>
         )}
       </div>

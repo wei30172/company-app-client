@@ -10,14 +10,12 @@ type Props = {
   cartItems: IProduct[];
   total: number;
   createOrderRequest: (payload: CreateOrderPayload) => CreateOrderRequest;
-  closeModal: () => void;
 };
 
 const CheckOutForm: React.FC<Props> = ({
   cartItems,
   total,
   createOrderRequest,
-  closeModal,
 }) => {
   const formInputs: InputType[] = [
     {
@@ -79,7 +77,6 @@ const CheckOutForm: React.FC<Props> = ({
       },
     });
     setInputs({ email: "", name: "", address: "" });
-    // closeModal();
   };
   return (
     <div className="checkout-form">

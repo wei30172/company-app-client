@@ -10,7 +10,6 @@ import {
 import { OrderActions } from "./types";
 
 const initialState: OrdersState = {
-  order: {} as IOrder,
   orders: [] as IOrder[],
   isLoading: false,
   error: "",
@@ -27,14 +26,12 @@ const orderReducer = (state = initialState, action: OrderActions) => {
       return {
         ...state,
         isLoading: false,
-        order: action.payload.order,
         error: null,
       };
     case CREATE_ORDER_FAILURE:
       return {
         ...state,
         isLoading: false,
-        order: {},
         error: action.payload.error,
       };
     case FETCH_ORDERS_REQUEST:
