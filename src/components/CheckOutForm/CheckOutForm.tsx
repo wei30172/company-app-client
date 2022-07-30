@@ -79,7 +79,7 @@ const CheckOutForm: React.FC<Props> = ({
       },
     });
     setInputs({ email: "", name: "", address: "" });
-    closeModal();
+    // closeModal();
   };
   return (
     <div className="checkout-form">

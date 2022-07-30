@@ -9,6 +9,8 @@ interface StateProps {
 const mapState = (state: StateProps) => ({
   cartItems: state.cart.cartItems,
   order: state.order.order,
+  isLoading: state.order.isLoading,
+  error: state.order.error,
 });
 
 const mapDispatch = {
