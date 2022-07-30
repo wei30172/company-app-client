@@ -5,10 +5,10 @@ A Company website template, built with React, Redux Saga TypeScript, and Sass.
 2. Build multiple reusable components to complete the website.
 
 ## Project Screenshots
-![company-app-template1](https://user-images.githubusercontent.com/60259324/180935816-5e5e9ab1-c63c-4307-886b-752f56f3f3f9.png)
-![company-app-template2](https://user-images.githubusercontent.com/60259324/180935832-950727a8-a521-4e53-9c57-84a14229f203.png)
-![company-app-template4](https://user-images.githubusercontent.com/60259324/180935868-60727091-3557-425f-8d2d-00f15024f729.png)
-![company-app-template6](https://user-images.githubusercontent.com/60259324/180935889-f282a077-31d0-42dc-8579-5dec426ed7e6.png)
+![company-app-template1](https://user-images.githubusercontent.com/60259324/181936904-ddc6b723-5f93-4e0f-91bc-ddb3c186a3c2.png)
+![company-app-template2](https://user-images.githubusercontent.com/60259324/181936911-221f86cb-f92a-421c-b1cf-dfb5bf4235d4.png)
+![company-app-template4](https://user-images.githubusercontent.com/60259324/181936914-aa783b61-e789-48db-9a48-c0f19de7cd5a.png)
+![company-app-template6](https://user-images.githubusercontent.com/60259324/181936918-48ab0759-4fc4-4efa-a20e-189f2fe85870.png)
 
 ## Test email & password
 testemail@testnet.co.us / test1234!
