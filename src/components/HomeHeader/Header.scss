@@ -1,0 +1,22 @@
+@use "../../styles/mixin/colors" as colors;
+@use "../../styles/mixin/screens" as screens;
+
+.home-header {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 80px;
+  z-index: 15;
+  padding: 0 .2rem;
+  background-color: colors.$secondary;
+  color: colors.$text-primary;
+  ul {
+    li {
+      border-left: 2px solid colors.$text-primary;
+      padding: 0 1rem;
+    }
+  }
+}

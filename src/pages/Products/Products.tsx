@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import {
-  ProductsNavbar,
   Filter,
   ProductsList,
   Pagination,
   Cart,
   ScrollBtn,
 } from "../../components";
+import { PropsFromRedux, authConnector } from "../../store/auth/connector";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import useCount from "../../hooks/usetCartItemsCount";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import Close from "@material-ui/icons/Close";
 import "./Products.scss";
 
-const Products = () => {
+const Products = ({
+    cartItems
+  }: PropsFromRedux) => {  
+  const [cartItemsCount] = useCount(cartItems);
   const [showCart, setShowCart] = useState(false);
   const { inputRef, handleScrollTop } = useScrollToTop(200);
 
@@ -21,10 +27,24 @@ const Products = () => {
 
   return (
     <div ref={inputRef} className="products">
-      <ProductsNavbar
-        showCart={showCart}
-        handleSetShowCart={handleSetShowCart}
-      />
+      {/* cart */}
+      <>
+        {showCart ? (
+          <Close
+            className="cart-button cursor-pointer"
+            onClick={handleSetShowCart}
+          />
+        ) : (
+          <>
+            <ShoppingCartIcon
+              className="cart-button cursor-pointer"
+              onClick={handleSetShowCart}
+            />
+            <div className="cart-count cursor-pointer">{cartItemsCount}</div>
+          </>
+        )}
+      </>
+      
       <ScrollBtn handleScrollTop={handleScrollTop} />
 
       <div className="products_main">
@@ -43,4 +63,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default authConnector(Products);

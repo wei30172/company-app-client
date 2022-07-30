@@ -1,6 +1,27 @@
+@use "../../styles/mixin/colors" as colors;
 @use "../../styles/mixin/screens" as screens;
 
 .products {
+  .cart-button {
+    position: absolute;
+    z-index: 15;
+    top: 100px;
+    right: 2rem;
+  }
+  .cart-count {
+    position: absolute;
+    z-index: 15;
+    top: 85px;
+    right: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: colors.$secondary;
+    color: colors.$text-primary; 
+    border-radius: 50%;  
+  }
   .products_main {
     padding-top: 80px;
     display: flex;

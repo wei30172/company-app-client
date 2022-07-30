@@ -1,11 +1,10 @@
 import React from "react";
 import { useRef } from "react";
 import {
-  HomeNavbar,
+  HomeHeader,
   ProductsIntro,
   About,
   Mission,
-  Footer,
 } from "../../components";
 
 import "./Home.scss";
@@ -25,11 +24,10 @@ const Home = () => {
 
   return (
     <div>
-      <HomeNavbar ref={navbarRef} mainRefs={mainRefs} />
+      <HomeHeader ref={navbarRef} mainRefs={mainRefs} />
       <ProductsIntro ref={productsRef} />
       <About ref={aboutRef} />
       <Mission ref={missionRef} />
-      <Footer />
     </div>
   );
 };
