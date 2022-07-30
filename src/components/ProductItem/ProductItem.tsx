@@ -1,16 +1,12 @@
 import { useState } from "react";
 import formatCurrency from "../../utils/formatCurrency";
-import {
-  AddToCartRequestPayload,
-  AddToCartRequest,
-} from "../../store/cart/types";
+import { PropsFromRedux, cartConnector } from "../../store/cart/connector";
 import { ProductModal } from "../index";
 import "./ProductItem.scss";
 
-type Props = {
+interface Props extends PropsFromRedux {
   product: IProduct;
-  addToCartRequest: (product: AddToCartRequestPayload) => AddToCartRequest;
-};
+}
 
 const ProductItem: React.FC<Props> = ({ product, addToCartRequest }) => {
   const [showProductModal, setShowProductModal] = useState(false);
@@ -51,4 +47,4 @@ const ProductItem: React.FC<Props> = ({ product, addToCartRequest }) => {
   );
 };
 
-export default ProductItem;
+export default cartConnector(ProductItem);

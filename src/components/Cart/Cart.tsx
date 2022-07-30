@@ -53,18 +53,18 @@ const Cart: React.FC<PropsFromRedux> = ({
           >
             Proceed
           </button>
-          {showCheckOut && (
-            isLoading ? (
+          {showCheckOut &&
+            (isLoading ? (
               <div className="flex">
                 <HourglassEmptyIcon />
               </div>
             ) : (
-            <CheckOutForm
-              cartItems={cartItems}
-              total={formatCurrency(calculateTotal(cartItems))}
-              createOrderRequest={createOrderRequest}
-            />
-          ))}
+              <CheckOutForm
+                cartItems={cartItems}
+                total={formatCurrency(calculateTotal(cartItems))}
+                createOrderRequest={createOrderRequest}
+              />
+            ))}
         </>
       )}
     </div>

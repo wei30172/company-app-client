@@ -44,7 +44,6 @@ const ProductModal: React.FC<Props> = ({
               className="btn"
               onClick={() => {
                 addToCartRequest({ cartItem: product });
-                closeModal();
               }}
             >
               Add to Cart

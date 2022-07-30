@@ -6,7 +6,6 @@ import {
   searchProductsRequest,
   paginateProductsRequest,
 } from "./actions";
-import { addToCartRequest } from "../cart/actions";
 
 interface StateProps {
   product: ProductsState;
@@ -23,7 +22,6 @@ const mapDispatch = {
   fetchProductsRequest,
   filterProductsRequest,
   sortProductsRequest,
-  addToCartRequest,
   searchProductsRequest,
   paginateProductsRequest,
 };

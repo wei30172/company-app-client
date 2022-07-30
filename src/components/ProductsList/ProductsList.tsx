@@ -13,7 +13,6 @@ const ProductsList = ({
   isLoading,
   error,
   fetchProductsRequest,
-  addToCartRequest,
 }: PropsFromRedux) => {
   useEffect(() => {
     fetchProductsRequest();
@@ -32,10 +31,7 @@ const ProductsList = ({
       <div className="products-list">
         {paginatedProducts.map((product: IProduct) => (
           <div key={product._id}>
-            <ProductItem
-              product={product}
-              addToCartRequest={addToCartRequest}
-            />
+            <ProductItem product={product} />
           </div>
         ))}
       </div>
