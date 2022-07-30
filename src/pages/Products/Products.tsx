@@ -13,9 +13,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Close from "@material-ui/icons/Close";
 import "./Products.scss";
 
-const Products = ({
-    cartItems
-  }: PropsFromRedux) => {  
+const Products = ({ cartItems }: PropsFromRedux) => {
   const [cartItemsCount] = useCount(cartItems);
   const [showCart, setShowCart] = useState(false);
   const { inputRef, handleScrollTop } = useScrollToTop(200);
@@ -44,7 +42,7 @@ const Products = ({
           </>
         )}
       </>
-      
+
       <ScrollBtn handleScrollTop={handleScrollTop} />
 
       <div className="products_main">

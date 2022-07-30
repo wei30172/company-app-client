@@ -7,10 +7,7 @@ import { SwitchMode } from "../index";
 import logo from "../../assets/logo.png";
 import "./Navbar.scss";
 
-const Navbar = ({
-  token,
-  logoutRequest,
-}: PropsFromRedux) => {
+const Navbar = ({ token, logoutRequest }: PropsFromRedux) => {
   const navigate = useNavigate();
   const [showMobMenu, setShowMobMenu] = useState(false);
 

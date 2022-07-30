@@ -36,13 +36,12 @@ const Login = ({ token, loginRequest }: PropsFromRedux) => {
     {
       id: 2,
       label: "Password",
-      errorMessage: "Password should be 6-20 characters",
-      // "Password should be 6-20 characters and include at least 1 letter, 1 number and 1 special character!",
+      errorMessage:
+        "Password should be 6-20 characters and include at least 1 letter, 1 number and 1 special character!",
       name: "password",
       type: "password",
       placeholder: "Password",
-      pattern: `(?=.*[a-zA-Z])[a-zA-Z0-9!@#$%^&*]{6,20}$`,
-      // pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,20}$`,
+      pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,20}$`,
       required: true,
       value: "",
     },

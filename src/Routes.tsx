@@ -6,7 +6,7 @@ import { Content } from "./components";
 const MainRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Content />} >
+      <Route path="/" element={<Content />}>
         <Route path="/" element={<Navigate replace to="home" />} />
         <Route path="/home" element={<Home />} />
         <Route path="/products" element={<Products />} />
