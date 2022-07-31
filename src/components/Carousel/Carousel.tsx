@@ -1,14 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
+import { CarouselItemType } from "../../types/components.type";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Card from "./Card";
 import "./Carousel.scss";
-
-export type CarouselItemType = {
-  idx: number;
-  title: string;
-  imageName: string;
-};
 
 type Props = {
   section: string;

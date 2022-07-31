@@ -16,7 +16,7 @@ const Navbar = ({ user, token, logoutRequest }: PropsFromRedux) => {
     logoutRequest();
   };
 
-  const welcome = user ? `Welcome, ${user}` : 'Welcome!'
+  const welcome = user ? `Welcome, ${user}` : "Welcome!";
 
   return (
     <div className="navbar">
@@ -27,7 +27,7 @@ const Navbar = ({ user, token, logoutRequest }: PropsFromRedux) => {
       <div className="navbar_menu flex">
         {/* mobile or pc menu */}
         <ul className={showMobMenu ? "navbar_menu_mobile" : "navbar_menu_pc"}>
-          <li className="flex">{ welcome }</li>
+          <li className="flex">{welcome}</li>
           <li className="cursor-pointer" onClick={() => navigate("/")}>
             Home
           </li>

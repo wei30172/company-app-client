@@ -1,0 +1,53 @@
+@use "../../../styles/mixin/colors" as colors;
+@use "../../../styles/mixin/screens" as screens;
+
+.mission {
+  width: 100%;
+  height: 100vh;
+  .mission_image {
+    width: 100%;
+    height: 100%;
+    background-color: #11182790;
+    position: absolute;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: overlay;
+    }
+  }
+  .mission_text {
+    max-width: 1200px;
+    height: 100%;
+    display: flex;
+    position: relative;
+    padding: 0 2rem;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    :nth-child(1) {
+      color: colors.$primary;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      font-size: 3.75rem;
+      line-height: 1;
+    }
+    :nth-child(2) {
+      color: colors.$white;
+      max-width: 300px;
+    }
+  }
+}
+
+@include screens.tablet {
+  .mission {
+    .mission_text {
+      :nth-child(2) {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+        max-width: 500px;
+      }
+    }
+  }
+}

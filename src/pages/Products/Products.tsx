@@ -1,14 +1,9 @@
 import React, { useState } from "react";
-import {
-  Filter,
-  ProductsList,
-  Pagination,
-  Cart,
-  ScrollBtn,
-} from "../../components";
 import { PropsFromRedux, authConnector } from "../../store/auth/connector";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import useCount from "../../hooks/usetCartItemsCount";
+import { ScrollBtn } from "../../components";
+import { Cart, Filter, Pagination, ProductsList } from "../../features";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Close from "@material-ui/icons/Close";
 import "./Products.scss";

@@ -1,0 +1,54 @@
+@use "../../../styles/mixin/colors" as colors;
+@use "../../../styles/mixin/screens" as screens;
+
+.product-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .close-button {
+    z-index: 99;
+    width: 1.1em;
+    height: 1.1em;
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+    background-color: colors.$primary;
+    color: colors.$white;
+    border-radius: 100%;
+  }
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    background-color: colors.$white;
+    border-radius: 1rem;
+    img {
+      max-height: 48vh;
+      max-width: 20rem;
+      margin: 1rem auto;
+      border-radius: 1rem;
+    }
+    .product-details_description {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      margin: 2rem;
+    }
+  }
+}
+
+@include screens.tablet {
+  .product-modal {
+    .product-details {
+      flex-direction: row;
+      img {
+        max-height: 80vh;
+        max-width: 40rem;
+        border-radius: 1rem 0 0 1rem;
+      }
+      button {
+        width: 50%;
+      }
+    }
+  }
+}

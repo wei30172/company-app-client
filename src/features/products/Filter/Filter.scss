@@ -1,0 +1,43 @@
+@use "../../../styles/mixin/colors" as colors;
+@use "../../../styles/mixin/screens" as screens;
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 0.1rem colors.$dark-300 solid;
+  .filter_result {
+    display: flex;
+    align-items: center;
+  }
+  .filter_search {
+    .MuiFormControl-root, .MuiTextField-root {
+      width: 100%;
+    }
+  }
+  .filter_selects {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    div {
+      flex: 1;
+    }
+  }
+}
+
+@include screens.tablet {
+  .filter {
+    display: flex;
+    flex-direction: row;
+    div {
+      flex: 1;
+    }
+    .filter_search {
+      .MuiFormControl-root, .MuiTextField-root {
+        width: 50%;
+      }
+    }
+  }
+}

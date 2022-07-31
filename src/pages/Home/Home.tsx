@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef } from "react";
-import { HomeHeader, ProductsIntro, About, Mission } from "../../components";
+import { About, HomeHeader, Mission, ProductsIntro } from "../../features";
 
 import "./Home.scss";
 

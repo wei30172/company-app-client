@@ -1,5 +1,5 @@
 import React from "react";
-import { CarouselItemType } from "./Carousel";
+import { CarouselItemType } from "../../types/components.type";
 
 import "./Card.scss";
 
