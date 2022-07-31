@@ -22,6 +22,7 @@ export interface AuthPayload {
 }
 
 export interface AuthSuccessPayload {
+  user: string;
   token: string;
 }
 

@@ -6,6 +6,7 @@ interface StateProps {
   cart: CartState;
 }
 const mapState = (state: StateProps) => ({
+  user: state.auth.user,
   token: state.auth.token,
   isLoading: state.auth.isLoading,
   error: state.auth.error,

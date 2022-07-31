@@ -19,6 +19,7 @@ middleware =
 const store = configureStore({
   reducer: rootReducer,
   middleware: middleware,
+  devTools: false, // Disable Redux dev tools
 });
 
 // Run the saga

@@ -13,6 +13,7 @@ import { AuthActions } from "./types";
 const auth = localStorage.getItem("auth");
 
 const initialState: AuthState = {
+  user: "",
   token: auth ? JSON.parse(auth).token : "",
   isLoading: false,
   error: "",
@@ -29,6 +30,7 @@ const authReducer = (state = initialState, action: AuthActions) => {
       return {
         ...state,
         isLoading: false,
+        user: action.payload.user,
         token: action.payload.token,
         error: null,
       };
@@ -36,6 +38,7 @@ const authReducer = (state = initialState, action: AuthActions) => {
       return {
         ...state,
         isLoading: false,
+        user: "",
         token: "",
         error: action.payload.error,
       };
@@ -48,6 +51,7 @@ const authReducer = (state = initialState, action: AuthActions) => {
       return {
         ...state,
         isLoading: false,
+        user: action.payload.user,
         token: action.payload.token,
         error: null,
       };
@@ -62,6 +66,7 @@ const authReducer = (state = initialState, action: AuthActions) => {
       return {
         ...state,
         isLoading: false,
+        user: "",
         token: "",
         error: null,
       };

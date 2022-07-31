@@ -33,6 +33,7 @@ function* loginSaga(action: any) {
       toast.success("Login Successfully!"),
       put(
         loginSuccess({
+          user: res.result.email,
           token: res.token,
         }),
       ),
@@ -61,6 +62,7 @@ function* signupSaga(action: any) {
       toast.success("Signup Successfully!"),
       put(
         signupSuccess({
+          user: res.result.email,
           token: res.token,
         }),
       ),

@@ -1,5 +1,6 @@
 // Auth
 interface AuthState {
+  user: string;
   token: string;
   isLoading: boolean;
   error: string;
