@@ -86,7 +86,13 @@ const Login = ({ token, isLoading, loginRequest }: PropsFromRedux) => {
               />
             </div>
           ))}
-          <input className="btn" type="submit" value="LOGIN" />
+          <button
+            disabled={!userInputs.email || !userInputs.password}
+            className="btn"
+            type="submit"
+          >
+            LOGIN
+          </button>
         </form>
         <div className="login_form_link flex">
           <p>Do not have an account?</p>

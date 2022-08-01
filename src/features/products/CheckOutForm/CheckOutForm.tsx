@@ -92,7 +92,13 @@ const CheckOutForm: React.FC<Props> = ({
             />
           ))}
         </>
-        <input type="submit" value="Create" className="btn create-button" />
+        <button
+          disabled={!inputs.email || !inputs.name || !inputs.address}
+          type="submit"
+          className="btn create-button"
+        >
+          CREATE
+        </button>
       </form>
     </div>
   );

@@ -61,6 +61,11 @@ table {
   &:hover{
     color: colors.$text-primary;
   }
+  &:disabled {
+    opacity: 0.5;
+    color: colors.$white;
+    cursor: not-allowed;
+  }
 }
 
 .light {

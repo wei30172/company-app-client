@@ -117,7 +117,19 @@ const Signup = ({ token, isLoading, signupRequest }: PropsFromRedux) => {
               />
             </div>
           ))}
-          <input className="btn" type="submit" value="REGISTER" />
+          <button
+            disabled={
+              !userInputs.firstName ||
+              !userInputs.lastName ||
+              !userInputs.email ||
+              !userInputs.password ||
+              !userInputs.confirmPassword
+            }
+            className="btn"
+            type="submit"
+          >
+            REGISTER
+          </button>
         </form>
         <div className="signup_form_link flex">
           <p>Already have an account?</p>
