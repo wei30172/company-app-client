@@ -8,13 +8,13 @@
     height: 100%;
     .products-intro_content {
       max-width: 1200px;
-      height: 66.666667%;
+      height: 65%;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      align-items: center;
+      align-items: flex-end;
       gap: 2rem;
       .products-intro_content_title {
         display: inline;
@@ -51,6 +51,7 @@
   .products-intro {
     .products-intro_container {
       .products-intro_content {
+        justify-content: center;
         flex-direction: row;
         .products-intro_content_paragraph {
           font-size: 1.25rem;

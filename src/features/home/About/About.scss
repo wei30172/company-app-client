@@ -8,13 +8,13 @@
     height: 100%;
     .about_content {
       max-width: 1200px;
-      height: 66.666667%;
+      height: 65%;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: flex-end;
       gap: 2rem;
       .about_content_title {
         display: inline;
