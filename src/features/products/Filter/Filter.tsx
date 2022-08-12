@@ -26,11 +26,11 @@ const Filter = ({
     let newOrderedProducts: IProduct[] = [...filteredProducts];
     newOrderedProducts.sort((a, b) =>
       order === "lowest"
-        ? a.price < b.price
+        ? a.price > b.price
           ? -1
           : 1
         : order === "highest"
-        ? a.price > b.price
+        ? a.price < b.price
           ? -1
           : 1
         : order === "latest"
