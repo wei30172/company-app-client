@@ -27,7 +27,7 @@ const CheckOutForm: React.FC<Props> = ({
       name: "name",
       type: "text",
       placeholder: "Name",
-      pattern: "^[A-Za-z0-9]{2,16}$",
+      pattern: "^[A-Za-z0-9_ ]{2,16}$",
       required: true,
     },
     {
