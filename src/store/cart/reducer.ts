@@ -4,7 +4,7 @@ import {
   CLEAR_CART_REQUEST,
 } from "./actionTypes";
 import { CartActions } from "./types";
-import { toast } from "react-hot-toast";
+// import { toast } from "react-hot-toast";
 
 const initialState: CartState = {
   cartItems: [],
@@ -20,7 +20,7 @@ const handleAddToCartRequest = (product: IProduct, cartItems: IProduct[]) => {
       )
     : [...newCartItems, { ...product, count: 1 }];
 
-  toast.success(`Add ${product.title} successfully!`);
+  // toast.success(`Add ${product.title} successfully!`);
 
   return newCartItems;
 };
@@ -44,7 +44,7 @@ const handleRemoveFromCartRequest = (
     }
   }, [] as IProduct[]);
 
-  toast.success(`Add ${product.title} successfully!`);
+  // toast.success(`Update ${product.title} successfully!`);
 
   return newCartItems;
 };
